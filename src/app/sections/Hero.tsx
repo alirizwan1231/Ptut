@@ -1,9 +1,10 @@
 'use client';
-import { motion } from 'framer-motion';
+
+import { motion, type Variants } from 'framer-motion';
 import Image from 'next/image';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -14,12 +15,15 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+    transition: {
+      duration: 0.7,
+      ease: [0.16, 1, 0.3, 1],
+    },
   },
 };
 
@@ -62,7 +66,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-[2] w-full max-w-[1240px] mx-auto px-6 lg:px-8 pt-32 pb-24 md:pt-36 md:pb-28">
-               <motion.div
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -85,7 +89,7 @@ export default function Hero() {
             <span className="absolute -top-6 -left-2 md:-left-4 text-[clamp(60px,12vw,140px)] font-black text-white/[0.03] leading-none select-none pointer-events-none tracking-tighter">
               PTUT
             </span>
-            
+
             <h1 className="text-[clamp(32px,5.2vw,68px)] font-extrabold leading-[1.08] tracking-tight">
               Punjab Tianjin{' '}
               <span className="block">University of Technology</span>
@@ -93,12 +97,13 @@ export default function Hero() {
           </motion.div>
 
           {/* Tagline / Sub-heading */}
-          <motion.div variants={itemVariants} className="mt-5 md:mt-6 flex items-center gap-4">
-           
+          <motion.div
+            variants={itemVariants}
+            className="mt-5 md:mt-6 flex items-center gap-4"
+          >
             <h2 className="text-[clamp(22px,3vw,38px)] font-bold leading-[1.15] tracking-tight text-white/95">
               Innovation with Purpose.
-              <br className="hidden sm:block" />
-              {' '}
+              <br className="hidden sm:block" />{' '}
               <span className="text-[#C62828]">Excellence</span> with Vision.
             </h2>
           </motion.div>
@@ -108,7 +113,9 @@ export default function Hero() {
             variants={itemVariants}
             className="mt-6 md:mt-8 text-base md:text-lg text-white/70 max-w-[55ch] leading-[1.75] font-light"
           >
-            The first institute in Pakistan built around a vision of world-class technical and vocational training at graduation level — applied knowledge and skill for the market that&apos;s actually hiring.
+            The first institute in Pakistan built around a vision of world-class
+            technical and vocational training at graduation level — applied
+            knowledge and skill for the market that&apos;s actually hiring.
           </motion.p>
 
           {/* CTAs */}
@@ -126,6 +133,7 @@ export default function Hero() {
                 className="transition-transform group-hover:translate-x-1"
               />
             </a>
+
             <a
               href="#programs"
               className="group inline-flex items-center gap-2 border-[1.5px] border-white/30 text-white px-7 py-4 text-sm font-medium rounded-lg transition-all hover:border-[#C62828] hover:text-[#C62828] hover:bg-white/5 active:translate-y-0"
@@ -150,9 +158,11 @@ export default function Hero() {
                   className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 md:p-5 hover:bg-white/10 hover:border-[#C62828]/30 transition-all duration-300"
                 >
                   <div className="absolute top-0 left-4 right-4 h-[2px] bg-gradient-to-r from-transparent via-[#C62828] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
                   <b className="block text-2xl md:text-[28px] font-extrabold text-white mb-1 tracking-tight">
                     {stat.label}
                   </b>
+
                   <span className="text-[12px] md:text-[13px] text-white/50 font-medium leading-tight block">
                     {stat.sub}
                   </span>
@@ -175,9 +185,14 @@ export default function Hero() {
         <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">
           Explore
         </span>
+
         <motion.div
           animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
+          transition={{
+            repeat: Infinity,
+            duration: 1.8,
+            ease: 'easeInOut',
+          }}
         >
           <ChevronDown size={20} />
         </motion.div>
