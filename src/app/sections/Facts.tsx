@@ -17,10 +17,7 @@ export default function Facts() {
       <div className="relative z-[2] max-w-[1240px] mx-auto px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#C62828] uppercase tracking-widest mb-3 justify-center">
-              <span className="text-[9px]">◆</span>
-              Why PTUT
-            </span>
+           
             <h2 className="text-[clamp(30px,3.4vw,44px)] font-bold tracking-tight text-white leading-tight mt-3">
               Built Different. Built for Industry.
             </h2>
@@ -55,9 +52,7 @@ export default function Facts() {
                 <div className="text-[11px] font-bold text-[#C62828] mb-4 tracking-[0.08em] uppercase">
                   {fact.code}
                 </div>
-                <h4 className="text-xl font-bold text-white mb-2.5 leading-tight">
-                  {fact.title}
-                </h4>
+                
                 <p className="text-sm text-white/60 leading-relaxed">
                   {fact.desc}
                 </p>
