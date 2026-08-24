@@ -2,9 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "public/src/*"
-      ]
+      "@/*": ["./src/*"] 
     },
     "allowJs": true,
     "skipLibCheck": true,
