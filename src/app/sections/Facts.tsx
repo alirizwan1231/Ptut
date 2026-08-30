@@ -11,13 +11,12 @@ const facts = [
 
 export default function Facts() {
   return (
-    <section id="facts" className="relative py-24 bg-[#0D2B5A] overflow-hidden border-y-4 border-[#C62828]">
+    <section id="facts" className="relative py-24 bg-navy overflow-hidden border-y-4 border-accent">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(198,40,40,0.08)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="relative z-[2] max-w-[1240px] mx-auto px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-16">
-           
             <h2 className="text-[clamp(30px,3.4vw,44px)] font-bold tracking-tight text-white leading-tight mt-3">
               Built Different. Built for Industry.
             </h2>
@@ -44,15 +43,15 @@ export default function Facts() {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-[125px] h-[125px] rounded-full border-[1.5px] border-white/[0.07] animate-orbit-3" />
                   </div>
-                  <div className="relative z-10 w-20 h-20 bg-[#C62828] rounded-full flex items-center justify-center text-2xl font-extrabold text-white shadow-lg shadow-[#C62828]/30 animate-pulse-slow">
+                  <div className="relative z-10 w-20 h-20 bg-accent rounded-full flex items-center justify-center text-2xl font-extrabold text-white shadow-lg shadow-accent/30 animate-pulse-slow">
                     {fact.num}
                   </div>
                 </div>
 
-                <div className="text-[11px] font-bold text-[#C62828] mb-4 tracking-[0.08em] uppercase">
+                <div className="text-[11px] font-bold text-accent mb-4 tracking-[0.08em] uppercase">
                   {fact.code}
                 </div>
-                
+
                 <p className="text-sm text-white/60 leading-relaxed">
                   {fact.desc}
                 </p>

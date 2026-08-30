@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  /* Legacy brand vars — kept for backward compatibility, unused by new components */
   --brand-blue: #0D2B5A;
   --brand-blue-light: #1A3C7A;
   --brand-red: #C62828;
@@ -10,6 +11,36 @@
   --bg-alt: #F5F7FA;
   --text-light: #4A5568;
   --slate: #64748B;
+
+  /* Theme-aware semantic tokens — LIGHT MODE */
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F5F7FA;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F5F7FA;
+  --color-heading: #0D2B5A;
+  --color-body: #4A5568;
+  --color-muted: #64748B;
+  --color-border: rgba(0, 0, 0, 0.05);
+  --color-accent: #C62828;
+  --color-accent-hover: #D32F2F;
+  --color-navy: #0D2B5A;
+  --color-navy-light: #1A3C7A;
+}
+
+.dark {
+  /* Theme-aware semantic tokens — DARK MODE */
+  --color-bg: #0A1424;
+  --color-bg-alt: #0F1B30;
+  --color-surface: #12203A;
+  --color-surface-alt: #0F1B30;
+  --color-heading: #E8EEF9;
+  --color-body: #B8C2D6;
+  --color-muted: #8B96AC;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-accent: #E85454;
+  --color-accent-hover: #F0716F;
+  --color-navy: #16264A;
+  --color-navy-light: #22366A;
 }
 
 @layer base {
@@ -20,6 +51,9 @@
     font-family: var(--font-inter), -apple-system, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    background-color: var(--color-bg);
+    color: var(--color-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 

@@ -24,25 +24,25 @@ export default function FacultyPage() {
   const totalCount = staffMembers.length;
 
   return (
-    <section className="pt-28 pb-24 bg-[#F5F7FA] min-h-screen">
+    <section className="pt-28 pb-24 bg-bg-alt min-h-screen">
       <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
         {/* Breadcrumb */}
-        <div className="text-xs font-medium text-[#64748B] mb-6 flex items-center gap-2">
+        <div className="text-xs font-medium text-muted mb-6 flex items-center gap-2">
           <span>Home</span>
-          <span className="text-[#64748B]/50">/</span>
-          <span className="text-[#0D2B5A] font-semibold">Staff Profile</span>
+          <span className="text-muted/50">/</span>
+          <span className="text-heading font-semibold">Staff Profile</span>
         </div>
 
         {/* Page Header */}
         <div className="mb-10">
-          <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#C62828] uppercase tracking-widest mb-3">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold text-accent uppercase tracking-widest mb-3">
             <span className="text-[9px]">◆</span>
             Directory
           </span>
-          <h1 className="text-[clamp(32px,4vw,48px)] font-bold text-[#0D2B5A] tracking-tight leading-tight">
+          <h1 className="text-[clamp(32px,4vw,48px)] font-bold text-heading tracking-tight leading-tight">
             Faculty & Staff
           </h1>
-          <p className="text-[#4A5568] mt-2 max-w-[60ch] leading-relaxed">
+          <p className="text-body mt-2 max-w-[60ch] leading-relaxed">
             Meet the dedicated professionals across all departments at Punjab Tianjin University of Technology.
           </p>
         </div>
@@ -53,21 +53,21 @@ export default function FacultyPage() {
             <div className="lg:sticky lg:top-28 space-y-6">
               {/* Search */}
               <div className="relative">
-                <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#64748B]" />
+                <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted" />
                 <input
                   type="text"
                   placeholder="Search staff..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-white border border-black/5 rounded-xl text-sm text-[#0D2B5A] placeholder:text-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828]/30 transition-all shadow-sm"
+                  className="w-full pl-10 pr-4 py-3 bg-surface border border-border rounded-xl text-sm text-heading placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent/30 transition-all shadow-sm"
                 />
               </div>
 
               {/* Department List */}
-              <div className="bg-white rounded-xl border border-black/5 shadow-sm overflow-hidden">
-                <div className="px-5 py-4 border-b border-black/5 flex items-center gap-2">
-                  <ListFilter size={16} className="text-[#C62828]" />
-                  <span className="text-sm font-bold text-[#0D2B5A] uppercase tracking-wider">Departments</span>
+              <div className="bg-surface rounded-xl border border-border shadow-sm overflow-hidden">
+                <div className="px-5 py-4 border-b border-border flex items-center gap-2">
+                  <ListFilter size={16} className="text-accent" />
+                  <span className="text-sm font-bold text-heading uppercase tracking-wider">Departments</span>
                 </div>
                 <nav className="p-2 space-y-0.5">
                   {departments.map((dept) => {
@@ -82,18 +82,18 @@ export default function FacultyPage() {
                         onClick={() => setActiveDept(dept)}
                         className={`w-full flex items-center justify-between px-3.5 py-3 rounded-lg text-sm font-medium transition-all duration-200 group ${
                           isActive
-                            ? 'bg-[#0D2B5A] text-white shadow-md'
-                            : 'text-[#4A5568] hover:bg-[#F5F7FA] hover:text-[#0D2B5A]'
+                            ? 'bg-navy text-white shadow-md'
+                            : 'text-body hover:bg-bg-alt hover:text-heading'
                         }`}
                       >
                         <span className="flex items-center gap-3">
                           <span className={`w-1.5 h-1.5 rounded-full transition-colors ${
-                            isActive ? 'bg-[#C62828]' : 'bg-[#CBD5E1] group-hover:bg-[#C62828]'
+                            isActive ? 'bg-accent' : 'bg-muted/40 group-hover:bg-accent'
                           }`} />
                           <span className="text-left leading-tight">{dept}</span>
                         </span>
                         <span className={`text-xs font-bold px-2 py-0.5 rounded-md ${
-                          isActive ? 'bg-white/15 text-white' : 'bg-[#F5F7FA] text-[#64748B]'
+                          isActive ? 'bg-white/15 text-white' : 'bg-bg-alt text-muted'
                         }`}>
                           {count}
                         </span>
@@ -104,9 +104,9 @@ export default function FacultyPage() {
               </div>
 
               {/* Quick Stat Card */}
-              <div className="hidden lg:block bg-[#0D2B5A] rounded-xl p-6 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-[#C62828]/10 rounded-full -translate-y-1/2 translate-x-1/2" />
-                <Users size={24} className="text-[#C62828] mb-3 relative z-10" />
+              <div className="hidden lg:block bg-navy rounded-xl p-6 text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-accent/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+                <Users size={24} className="text-accent mb-3 relative z-10" />
                 <div className="text-3xl font-bold relative z-10">{totalCount}</div>
                 <div className="text-sm text-white/60 relative z-10 mt-1">Total Staff Members</div>
               </div>
@@ -126,8 +126,8 @@ export default function FacultyPage() {
                     onClick={() => setActiveDept(dept)}
                     className={`shrink-0 px-4 py-2.5 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap ${
                       isActive
-                        ? 'bg-[#0D2B5A] text-white border-[#0D2B5A] shadow-md'
-                        : 'bg-white text-[#4A5568] border-black/5 hover:border-[#0D2B5A]'
+                        ? 'bg-navy text-white border-navy shadow-md'
+                        : 'bg-surface text-body border-border hover:border-navy'
                     }`}
                   >
                     {dept} <span className="opacity-60">({count})</span>
@@ -139,18 +139,18 @@ export default function FacultyPage() {
             {/* Results Header */}
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
-                <LayoutGrid size={18} className="text-[#C62828]" />
-                <h2 className="text-lg font-bold text-[#0D2B5A]">
+                <LayoutGrid size={18} className="text-accent" />
+                <h2 className="text-lg font-bold text-heading">
                   {activeDept === 'All' ? 'All Staff' : activeDept}
                 </h2>
-                <span className="text-xs font-semibold text-[#64748B] bg-white px-2.5 py-1 rounded-md border border-black/5">
+                <span className="text-xs font-semibold text-muted bg-surface px-2.5 py-1 rounded-md border border-border">
                   {activeCount} member{activeCount !== 1 ? 's' : ''}
                 </span>
               </div>
               {searchQuery && (
                 <button
                   onClick={() => { setSearchQuery(''); setActiveDept('All'); }}
-                  className="text-xs font-semibold text-[#C62828] hover:underline underline-offset-4"
+                  className="text-xs font-semibold text-accent hover:underline underline-offset-4"
                 >
                   Clear filters
                 </button>
@@ -185,11 +185,11 @@ export default function FacultyPage() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-center py-20 bg-white rounded-2xl border border-black/5 shadow-sm"
+                className="text-center py-20 bg-surface rounded-2xl border border-border shadow-sm"
               >
-                <Users size={48} className="mx-auto text-[#CBD5E1] mb-4" />
-                <h3 className="text-xl font-semibold text-[#0D2B5A] mb-2">No members found</h3>
-                <p className="text-[#64748B] text-sm">Try adjusting your search or department filter.</p>
+                <Users size={48} className="mx-auto text-muted/40 mb-4" />
+                <h3 className="text-xl font-semibold text-heading mb-2">No members found</h3>
+                <p className="text-muted text-sm">Try adjusting your search or department filter.</p>
               </motion.div>
             )}
           </main>

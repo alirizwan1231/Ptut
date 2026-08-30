@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Header from './components/Header'; // ✅ relative path
+import Header from './components/Header';
+import ThemeProvider from './components/ThemeProvider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -16,12 +17,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth`}>
-      <body className="font-sans antialiased text-[#121826]">
-        {/* ✅ Header added here */}
-        <Header />
-        {/* ✅ padding to avoid content hiding under fixed header */}
-        <main className="">{children}</main>
+    <html lang="en" className={`${inter.variable} scroll-smooth`} suppressHydrationWarning>
+      <body className="font-sans antialiased bg-bg text-body">
+        <ThemeProvider>
+          <Header />
+          <main className="">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );

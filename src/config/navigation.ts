@@ -9,9 +9,6 @@ export const navLinks: NavItem[] = [
   {
     label: 'About Us',
     children: [
-      { href: '/about', label: 'About' },
-      { href: '#', label: 'History' },
-      { href: '#', label: 'Vision & Mission' },
       { href: '/academic-regulations', label: 'Academic Regulations' },
       { href: '/act-2018', label: 'ACT 2018' },
     ],
@@ -58,9 +55,9 @@ export const navLinks: NavItem[] = [
   {
     label: 'Admission',
     children: [
-      { href: '#', label: 'Merit List' },
-      { href: '#', label: 'Admissions Fall 2026' },
-      { href: '#', label: 'Short Course' },
+      { href: '/merit-list', label: 'Merit List' },
+      { href: '/admissions', label: 'Admissions Fall 2026' },
+      { href: '/short-course', label: 'Short Course' },
     ],
   },
   { href: '/contact', label: 'Contact' },
