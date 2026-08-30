@@ -254,7 +254,7 @@ function MobileNavItem({ item, onNavigate, depth = 0 }: { item: NavItem; onNavig
   const hasChildren = item.children && item.children.length > 0;
 
   if (hasChildren) {
-    // ✅ Use `!` to tell TypeScript `children` is definitely defined
+    // ✅ Add the non‑null assertion (!) to tell TypeScript it's safe
     const hasNested = item.children!.some((c) => c.children && c.children.length > 0);
 
     return (
@@ -317,9 +317,7 @@ function MobileNavItem({ item, onNavigate, depth = 0 }: { item: NavItem; onNavig
       href={item.href || '#'}
       onClick={onNavigate}
       className={`flex items-center gap-2.5 py-3.5 text-[15px] font-medium border-b border-border last:border-0 transition-all duration-200 ${
-        item.href && item.href !== '#'
-          ? 'text-heading hover:text-accent hover:pl-1'
-          : 'text-muted/50 cursor-not-allowed'
+        item.href && item.href !== '#' ? 'text-heading hover:text-accent hover:pl-1' : 'text-muted/50 cursor-not-allowed'
       }`}
       style={{ paddingLeft: depth * 16 + 8 }}
     >

@@ -240,7 +240,9 @@ function MobileNavItem({ item, onNavigate, depth = 0 }: { item: NavItem; onNavig
   const hasChildren = item.children && item.children.length > 0;
 
   if (hasChildren) {
+    // ✅ Use non‑null assertion because we already checked `hasChildren`
     const hasNested = item.children!.some((c) => c.children && c.children.length > 0);
+
     return (
       <div className={`border-b border-border last:border-0 ${depth > 0 ? 'ml-3 pl-3 border-l-2 border-accent/20' : ''}`}>
         <button
@@ -264,7 +266,9 @@ function MobileNavItem({ item, onNavigate, depth = 0 }: { item: NavItem; onNavig
             >
               <div className="pb-2 space-y-0.5">
                 {item.children!.map((child) => {
-                  if (hasNested && child.children && child.children.length > 0) {
+                  // ✅ Check if child has grandchildren
+                  const hasGrandchildren = child.children && child.children.length > 0;
+                  if (hasNested && hasGrandchildren) {
                     return (
                       <div key={child.label} className="py-1">
                         <div className="flex items-center gap-2 px-2 py-1.5">
@@ -272,7 +276,8 @@ function MobileNavItem({ item, onNavigate, depth = 0 }: { item: NavItem; onNavig
                           <span className="text-[11px] font-bold text-accent uppercase tracking-wider">{child.label}</span>
                         </div>
                         <div className="ml-4 space-y-0.5">
-                          {child.children.map((sub) => (
+                          {/* ✅ Use non‑null assertion because we checked `hasGrandchildren` */}
+                          {child.children!.map((sub) => (
                             <Link
                               key={sub.label}
                               href={sub.href || '#'}
