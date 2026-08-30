@@ -250,60 +250,81 @@ export default function Header() {
 }
 
 function MobileNavItem({ item, onNavigate, depth = 0 }: { item: NavItem; onNavigate: () => void; depth?: number }) {
-    const [open, setOpen] = useState(false);
-    const hasChildren = item.children && item.children.length > 0;
+  const [open, setOpen] = useState(false);
+  const hasChildren = item.children && item.children.length > 0;
 
-    if (hasChildren) {
-        const hasNested = item.children.some((c) => c.children && c.children.length > 0);
-        return (
-            <div className={`border-b border-border last:border-0 ${depth > 0 ? 'ml-3 pl-3 border-l-2 border-accent/20' : ''}`}>
-                <button onClick={() => setOpen(!open)} className="flex items-center justify-between w-full py-3.5 text-left text-heading font-medium text-[15px] group">
-                    <span>{item.label}</span>
-                    <ChevronDown size={18} className={`text-muted transition-all duration-300 ${open ? 'rotate-180 text-accent' : ''}`} />
-                </button>
-                <AnimatePresence>
-                    {open && (
-                        <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }} className="overflow-hidden">
-                            <div className="pb-2 space-y-0.5">
-                                {item.children!.map((child) => {
-                                    if (hasNested && child.children && child.children.length > 0) {
-                                        return (
-                                            <div key={child.label} className="py-1">
-                                                <div className="flex items-center gap-2 px-2 py-1.5">
-                                                    <span className="w-1 h-3 bg-accent rounded-full" />
-                                                    <span className="text-[11px] font-bold text-accent uppercase tracking-wider">{child.label}</span>
-                                                </div>
-                                                <div className="ml-4 space-y-0.5">
-                                                    {child.children.map((sub) => (
-                                                        <Link key={sub.label} href={sub.href || '#'} onClick={onNavigate} className="flex items-center gap-2 px-3 py-2 rounded-lg text-[14px] text-body hover:text-accent hover:bg-bg-alt transition-all duration-200">
-                                                            {sub.label}
-                                                        </Link>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        );
-                                    }
-                                    return <MobileNavItem key={child.label} item={child} onNavigate={onNavigate} depth={depth + 1} />;
-                                })}
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </div>
-        );
-    }
+  if (hasChildren) {
+    // ✅ Use `!` to tell TypeScript `children` is definitely defined
+    const hasNested = item.children!.some((c) => c.children && c.children.length > 0);
 
     return (
-        <Link
-            href={item.href || '#'}
-            onClick={onNavigate}
-            className={`flex items-center gap-2.5 py-3.5 text-[15px] font-medium border-b border-border last:border-0 transition-all duration-200 ${
-                item.href && item.href !== '#' ? 'text-heading hover:text-accent hover:pl-1' : 'text-muted/50 cursor-not-allowed'
-            }`}
-            style={{ paddingLeft: depth * 16 + 8 }}
+      <div className={`border-b border-border last:border-0 ${depth > 0 ? 'ml-3 pl-3 border-l-2 border-accent/20' : ''}`}>
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex items-center justify-between w-full py-3.5 text-left text-heading font-medium text-[15px] group"
         >
-            {item.label}
-            {item.href && item.href !== '#' && <ArrowRight size={14} className="ml-auto text-accent/40" />}
-        </Link>
+          <span>{item.label}</span>
+          <ChevronDown
+            size={18}
+            className={`text-muted transition-all duration-300 ${open ? 'rotate-180 text-accent' : ''}`}
+          />
+        </button>
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="overflow-hidden"
+            >
+              <div className="pb-2 space-y-0.5">
+                {item.children!.map((child) => {
+                  if (hasNested && child.children && child.children.length > 0) {
+                    return (
+                      <div key={child.label} className="py-1">
+                        <div className="flex items-center gap-2 px-2 py-1.5">
+                          <span className="w-1 h-3 bg-accent rounded-full" />
+                          <span className="text-[11px] font-bold text-accent uppercase tracking-wider">{child.label}</span>
+                        </div>
+                        <div className="ml-4 space-y-0.5">
+                          {child.children.map((sub) => (
+                            <Link
+                              key={sub.label}
+                              href={sub.href || '#'}
+                              onClick={onNavigate}
+                              className="flex items-center gap-2 px-3 py-2 rounded-lg text-[14px] text-body hover:text-accent hover:bg-bg-alt transition-all duration-200"
+                            >
+                              {sub.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  }
+                  return <MobileNavItem key={child.label} item={child} onNavigate={onNavigate} depth={depth + 1} />;
+                })}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     );
+  }
+
+  return (
+    <Link
+      href={item.href || '#'}
+      onClick={onNavigate}
+      className={`flex items-center gap-2.5 py-3.5 text-[15px] font-medium border-b border-border last:border-0 transition-all duration-200 ${
+        item.href && item.href !== '#'
+          ? 'text-heading hover:text-accent hover:pl-1'
+          : 'text-muted/50 cursor-not-allowed'
+      }`}
+      style={{ paddingLeft: depth * 16 + 8 }}
+    >
+      {item.label}
+      {item.href && item.href !== '#' && <ArrowRight size={14} className="ml-auto text-accent/40" />}
+    </Link>
+  );
 }
