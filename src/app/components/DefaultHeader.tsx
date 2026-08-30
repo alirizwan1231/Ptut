@@ -240,7 +240,7 @@ function MobileNavItem({ item, onNavigate, depth = 0 }: { item: NavItem; onNavig
   const hasChildren = item.children && item.children.length > 0;
 
   if (hasChildren) {
-    const hasNested = item.children.some((c) => c.children && c.children.length > 0);
+    const hasNested = item.children!.some((c) => c.children && c.children.length > 0);
     return (
       <div className={`border-b border-border last:border-0 ${depth > 0 ? 'ml-3 pl-3 border-l-2 border-accent/20' : ''}`}>
         <button
