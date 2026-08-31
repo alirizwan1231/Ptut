@@ -21,8 +21,8 @@ const LetteredList = ({ items, startChar = 'a', className = '' }: { items: (stri
     {items.map((item, i) => {
       const letter = String.fromCharCode(startChar.charCodeAt(0) + i);
       return (
-        <div key={i} className="flex gap-3 text-[15px] leading-[1.75] text-[#4A5568]">
-          <span className="shrink-0 text-[#C62828] font-bold text-sm mt-0.5">({letter})</span>
+        <div key={i} className="flex gap-3 text-[15px] leading-[1.75] text-body">
+          <span className="shrink-0 text-accent font-bold text-sm mt-0.5">({letter})</span>
           <span>{item}</span>
         </div>
       );
@@ -33,8 +33,8 @@ const LetteredList = ({ items, startChar = 'a', className = '' }: { items: (stri
 const NumberedList = ({ items, startNum = 1 }: { items: (string | React.ReactNode)[]; startNum?: number }) => (
   <div className="space-y-2.5 my-3">
     {items.map((item, i) => (
-      <div key={i} className="flex gap-3 text-[15px] leading-[1.75] text-[#4A5568]">
-        <span className="shrink-0 text-[#0D2B5A] font-bold text-sm mt-0.5">({startNum + i})</span>
+      <div key={i} className="flex gap-3 text-[15px] leading-[1.75] text-body">
+        <span className="shrink-0 text-heading font-bold text-sm mt-0.5">({startNum + i})</span>
         <span>{item}</span>
       </div>
     ))}
@@ -46,8 +46,8 @@ const RomanList = ({ items }: { items: (string | React.ReactNode)[] }) => (
     {items.map((item, i) => {
       const numerals = ['i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix', 'x', 'xi', 'xii'];
       return (
-        <div key={i} className="flex gap-3 text-[15px] leading-[1.75] text-[#4A5568]">
-          <span className="shrink-0 text-[#64748B] font-semibold text-sm mt-0.5">({numerals[i]})</span>
+        <div key={i} className="flex gap-3 text-[15px] leading-[1.75] text-body">
+          <span className="shrink-0 text-muted font-semibold text-sm mt-0.5">({numerals[i]})</span>
           <span>{item}</span>
         </div>
       );
@@ -56,7 +56,7 @@ const RomanList = ({ items }: { items: (string | React.ReactNode)[] }) => (
 );
 
 const Proviso = ({ children }: { children: React.ReactNode }) => (
-  <div className="my-3 pl-4 border-l-2 border-[#C62828]/30 italic text-[#4A5568]/90 text-[15px] leading-[1.75]">
+  <div className="my-3 pl-4 border-l-2 border-accent/30 italic text-body/90 text-[15px] leading-[1.75]">
     {children}
   </div>
 );
@@ -64,25 +64,25 @@ const Proviso = ({ children }: { children: React.ReactNode }) => (
 const SectionHeader = ({ num, title }: { num: string; title: string }) => (
   <div className="mb-8 mt-16 first:mt-0 scroll-mt-28" id={`chapter-${num}`}>
     <div className="flex items-center gap-4">
-      <span className="text-[clamp(48px,6vw,80px)] font-black text-[#C62828]/10 leading-none select-none">{num}</span>
+      <span className="text-[clamp(48px,6vw,80px)] font-black text-accent/10 leading-none select-none">{num}</span>
       <div>
-        <span className="text-xs font-bold text-[#C62828] uppercase tracking-[0.2em] block mb-1">Chapter {num}</span>
-        <h2 className="text-[clamp(22px,2.5vw,30px)] font-bold text-[#0D2B5A] leading-tight">{title}</h2>
+        <span className="text-xs font-bold text-accent uppercase tracking-[0.2em] block mb-1">Chapter {num}</span>
+        <h2 className="text-[clamp(22px,2.5vw,30px)] font-bold text-heading leading-tight">{title}</h2>
       </div>
     </div>
-    <div className="w-16 h-1 bg-[#C62828] mt-4 rounded-full ml-[4px]" />
+    <div className="w-16 h-1 bg-accent mt-4 rounded-full ml-[4px]" />
   </div>
 );
 
 const ActSection = ({ num, title, children }: { num: string; title: string; children: React.ReactNode }) => (
   <div className="mb-10 scroll-mt-32" id={`section-${num.replace(/\./g, '-')}`}>
-    <h3 className="text-lg font-bold text-[#0D2B5A] mb-3 flex items-start gap-3">
-      <span className="shrink-0 inline-flex items-center justify-center min-w-[40px] h-8 px-2 rounded-md bg-[#C62828]/10 text-[#C62828] text-xs font-bold tracking-wider border border-[#C62828]/10">
+    <h3 className="text-lg font-bold text-heading mb-3 flex items-start gap-3">
+      <span className="shrink-0 inline-flex items-center justify-center min-w-[40px] h-8 px-2 rounded-md bg-accent/10 text-accent text-xs font-bold tracking-wider border border-accent/10">
         {num}
       </span>
       <span className="leading-snug mt-0.5">{title}</span>
     </h3>
-    <div className="pl-[52px] text-[15px] leading-[1.8] text-[#4A5568] space-y-3">
+    <div className="pl-[52px] text-[15px] leading-[1.8] text-body space-y-3">
       {children}
     </div>
   </div>
@@ -113,17 +113,17 @@ export default function Act2018Page() {
   }, []);
 
   return (
-    <main className="bg-white min-h-screen">
+    <main className="bg-bg min-h-screen">
       {/* Hero Header */}
-      <section className="relative bg-[#0D2B5A] text-white border-b-4 border-[#C62828] pt-28 pb-14 lg:pt-32 lg:pb-16 overflow-hidden">
+      <section className="relative bg-navy text-white border-b-4 border-accent pt-28 pb-14 lg:pt-32 lg:pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(198,40,40,0.15)_0%,transparent_60%)]" />
         <div className="relative max-w-[1240px] mx-auto px-6 lg:px-8">
           <div className="inline-flex items-center gap-2.5 text-[13px] font-medium tracking-wide mb-5 bg-white/5 px-4 py-1.5 rounded-full border border-white/5">
-            <Scale size={14} className="text-[#C62828]" />
+            <Scale size={14} className="text-accent" />
             LEGAL FRAMEWORK
           </div>
           <h1 className="text-[clamp(28px,4.5vw,52px)] font-extrabold leading-[1.1] tracking-tight max-w-[24ch]">
-            The Punjab Tianjin University of Technology Lahore <span className="text-[#C62828]">Act 2018</span>
+            The Punjab Tianjin University of Technology Lahore <span className="text-accent">Act 2018</span>
           </h1>
           <p className="mt-4 text-white/70 max-w-[60ch] leading-relaxed text-[15px]">
             Act XI of 2018 — An Act for the establishment of Punjab Tianjin University of Technology Lahore.
@@ -132,7 +132,7 @@ export default function Act2018Page() {
       </section>
 
       {/* Meta Bar */}
-      <div className="bg-[#F5F7FA] border-b border-black/5">
+      <div className="bg-bg-alt border-b border-border">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
@@ -140,13 +140,13 @@ export default function Act2018Page() {
               { icon: Calendar, label: 'Passed', value: '14 March 2018' },
               { icon: BookOpen, label: 'Published', value: '20 March 2018' },
             ].map((item) => (
-              <div key={item.label} className="bg-white border border-black/5 rounded-lg p-4 flex items-center gap-4 shadow-sm">
-                <div className="w-10 h-10 rounded-lg bg-[#0D2B5A]/5 flex items-center justify-center text-[#0D2B5A]">
+              <div key={item.label} className="bg-surface border border-border rounded-lg p-4 flex items-center gap-4 shadow-sm">
+                <div className="w-10 h-10 rounded-lg bg-navy/5 flex items-center justify-center text-heading">
                   <item.icon size={20} />
                 </div>
                 <div>
-                  <div className="text-[11px] text-[#64748B] font-semibold uppercase tracking-wider">{item.label}</div>
-                  <div className="text-sm font-bold text-[#0D2B5A]">{item.value}</div>
+                  <div className="text-[11px] text-muted font-semibold uppercase tracking-wider">{item.label}</div>
+                  <div className="text-sm font-bold text-heading">{item.value}</div>
                 </div>
               </div>
             ))}
@@ -160,9 +160,9 @@ export default function Act2018Page() {
           {/* Sidebar */}
           <aside className="lg:w-72 shrink-0">
             <div className="lg:sticky lg:top-28">
-              <div className="bg-white border border-black/5 rounded-xl shadow-sm p-5">
-                <h3 className="text-xs font-bold text-[#C62828] uppercase tracking-[0.15em] mb-4 flex items-center gap-2">
-                  <span className="w-4 h-[2px] bg-[#C62828] rounded-full" />
+              <div className="bg-surface border border-border rounded-xl shadow-sm p-5">
+                <h3 className="text-xs font-bold text-accent uppercase tracking-[0.15em] mb-4 flex items-center gap-2">
+                  <span className="w-4 h-[2px] bg-accent rounded-full" />
                   Table of Contents
                 </h3>
                 <nav className="space-y-1 max-h-[60vh] overflow-y-auto pr-1">
@@ -173,11 +173,11 @@ export default function Act2018Page() {
                       onClick={() => setMobileNavOpen(false)}
                       className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${
                         activeChapter === ch.id
-                          ? 'bg-[#0D2B5A] text-white shadow-md'
-                          : 'text-[#4A5568] hover:bg-[#F5F7FA] hover:text-[#0D2B5A]'
+                          ? 'bg-navy text-white shadow-md'
+                          : 'text-body hover:bg-bg-alt hover:text-heading'
                       }`}
                     >
-                      <span className={`text-xs font-bold ${activeChapter === ch.id ? 'text-[#C62828]' : 'text-[#C62828]/60'}`}>
+                      <span className={`text-xs font-bold ${activeChapter === ch.id ? 'text-accent' : 'text-accent/60'}`}>
                         {ch.id}
                       </span>
                       <span className="truncate">{ch.title}</span>
@@ -194,7 +194,7 @@ export default function Act2018Page() {
             <div className="lg:hidden mb-8">
               <button
                 onClick={() => setMobileNavOpen(!mobileNavOpen)}
-                className="w-full flex items-center justify-between bg-white border border-black/5 rounded-lg p-4 shadow-sm text-[#0D2B5A] font-semibold text-sm"
+                className="w-full flex items-center justify-between bg-surface border border-border rounded-lg p-4 shadow-sm text-heading font-semibold text-sm"
               >
                 <span>Jump to Chapter</span>
                 {mobileNavOpen ? <X size={20} /> : <Menu size={20} />}
@@ -207,15 +207,15 @@ export default function Act2018Page() {
                     exit={{ height: 0, opacity: 0 }}
                     className="overflow-hidden"
                   >
-                    <div className="mt-2 bg-white border border-black/5 rounded-lg shadow-sm p-2 space-y-1">
+                    <div className="mt-2 bg-surface border border-border rounded-lg shadow-sm p-2 space-y-1">
                       {chapters.map((ch) => (
                         <a
                           key={ch.id}
                           href={`#chapter-${ch.id}`}
                           onClick={() => setMobileNavOpen(false)}
-                          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#4A5568] hover:bg-[#F5F7FA] hover:text-[#0D2B5A]"
+                          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-body hover:bg-bg-alt hover:text-heading"
                         >
-                          <span className="text-xs font-bold text-[#C62828]/60">{ch.id}</span>
+                          <span className="text-xs font-bold text-accent/60">{ch.id}</span>
                           {ch.title}
                         </a>
                       ))}
@@ -227,14 +227,14 @@ export default function Act2018Page() {
 
             {/* Preamble */}
             <ScrollReveal>
-              <div className="mb-14 p-6 lg:p-8 bg-[#F5F7FA] border-l-4 border-[#C62828] rounded-r-xl">
-                <p className="text-[15px] leading-[1.8] text-[#4A5568] font-medium">
+              <div className="mb-14 p-6 lg:p-8 bg-bg-alt border-l-4 border-accent rounded-r-xl">
+                <p className="text-[15px] leading-[1.8] text-body font-medium">
                   An Act for the establishment of Punjab Tianjin University of Technology Lahore.
                 </p>
-                <p className="text-[15px] leading-[1.8] text-[#4A5568] mt-4">
+                <p className="text-[15px] leading-[1.8] text-body mt-4">
                   It is necessary in public interest to make provisions for the establishment of Punjab Tianjin University of Technology Lahore inter alia to undertake research and development for purposes of producing high quality technical human resource to cope with the present day requirements; and, to make incidental provisions.
                 </p>
-                <p className="text-[15px] leading-[1.8] text-[#0D2B5A] mt-4 font-bold">
+                <p className="text-[15px] leading-[1.8] text-heading mt-4 font-bold">
                   Be it enacted by the Provincial Assembly of the Punjab as follows:
                 </p>
               </div>
@@ -278,9 +278,9 @@ export default function Act2018Page() {
                       ['University', 'means Punjab Tianjin University of Technology Lahore;'],
                       ['Vice Chancellor', 'means the Vice Chancellor of the University.'],
                     ].map(([term, def], i) => (
-                      <div key={i} className="flex gap-2 text-sm text-[#4A5568] leading-relaxed p-3 rounded-lg border border-black/5 bg-white">
-                        <span className="text-[#C62828] font-bold shrink-0">({String.fromCharCode(97 + i)})</span>
-                        <span><strong className="text-[#0D2B5A]">“{term}”</strong> {def}</span>
+                      <div key={i} className="flex gap-2 text-sm text-body leading-relaxed p-3 rounded-lg border border-border bg-surface">
+                        <span className="text-accent font-bold shrink-0">({String.fromCharCode(97 + i)})</span>
+                        <span><strong className="text-heading">“{term}”</strong> {def}</span>
                       </div>
                     ))}
                   </div>
@@ -307,7 +307,7 @@ export default function Act2018Page() {
                 </ActSection>
 
                 <ActSection num="4" title="Functions of the University.">
-                  <p className="font-semibold text-[#0D2B5A] mb-2">(1) The University shall:</p>
+                  <p className="font-semibold text-heading mb-2">(1) The University shall:</p>
                   <LetteredList
                     items={[
                       'provide for instructions in such branches of technology as it may deem fit, and make provisions for teaching, training, research and for the application, advancement and dissemination of knowledge in such manner as it may determine;',
@@ -333,7 +333,7 @@ export default function Act2018Page() {
                       'do such other acts, whether incidental to the powers aforesaid or otherwise, as may be required for furthering the objectives of the University as a place of education, learning and research in the relevant disciplines.',
                     ]}
                   />
-                  <p className="font-semibold text-[#0D2B5A] mb-2 mt-6">(2) The University may:</p>
+                  <p className="font-semibold text-heading mb-2 mt-6">(2) The University may:</p>
                   <LetteredList
                     startChar="a"
                     items={[
@@ -533,7 +533,7 @@ export default function Act2018Page() {
                 </ActSection>
 
                 <ActSection num="23" title="Syndicate.">
-                  <p className="font-semibold text-[#0D2B5A] mb-2">(1) The Syndicate shall consist of:</p>
+                  <p className="font-semibold text-heading mb-2">(1) The Syndicate shall consist of:</p>
                   <LetteredList
                     items={[
                       'Vice Chancellor (Chairperson);',
@@ -555,8 +555,8 @@ export default function Act2018Page() {
                 </ActSection>
 
                 <ActSection num="24" title="Powers and duties of the Syndicate.">
-                  <p className="font-semibold text-[#0D2B5A] mb-2">(1) The Syndicate shall be the executive body of the University and shall, subject to the provisions of the Act and the Statutes, take effective measures to raise the standard of teaching, research, technological development, publication and other academic pursuits and exercise general supervision over the affairs of the University and management of the property of the University.</p>
-                  <p className="font-semibold text-[#0D2B5A] mb-2">(2) Without prejudice to the generality of the foregoing powers and subject to the provisions of the Act, the Syndicate may:</p>
+                  <p className="font-semibold text-heading mb-2">(1) The Syndicate shall be the executive body of the University and shall, subject to the provisions of the Act and the Statutes, take effective measures to raise the standard of teaching, research, technological development, publication and other academic pursuits and exercise general supervision over the affairs of the University and management of the property of the University.</p>
+                  <p className="font-semibold text-heading mb-2">(2) Without prejudice to the generality of the foregoing powers and subject to the provisions of the Act, the Syndicate may:</p>
                   <LetteredList
                     items={[
                       'hold, control and administer the property and funds of the University;',
@@ -588,7 +588,7 @@ export default function Act2018Page() {
                       'perform such other functions as may be assigned to it under the Act and the Statutes.',
                     ]}
                   />
-                  <p className="font-semibold text-[#0D2B5A] mb-2 mt-6">(3) The Syndicate may delegate any of its functions to an Authority or officer or a committee or sub-committee, except the following functions:</p>
+                  <p className="font-semibold text-heading mb-2 mt-6">(3) The Syndicate may delegate any of its functions to an Authority or officer or a committee or sub-committee, except the following functions:</p>
                   <LetteredList
                     startChar="a"
                     items={[
@@ -602,7 +602,7 @@ export default function Act2018Page() {
                 </ActSection>
 
                 <ActSection num="25" title="Academic Council.">
-                  <p className="font-semibold text-[#0D2B5A] mb-2">(1) The Academic Council shall consist of:</p>
+                  <p className="font-semibold text-heading mb-2">(1) The Academic Council shall consist of:</p>
                   <LetteredList
                     items={[
                       'Vice Chancellor (Chairperson);',
@@ -626,8 +626,8 @@ export default function Act2018Page() {
                 </ActSection>
 
                 <ActSection num="26" title="Powers and duties of the Academic Council.">
-                  <p className="font-semibold text-[#0D2B5A] mb-2">(1) The Academic Council shall be the academic body of the University and shall, subject to the provisions of the Act, the Statutes and the Regulations, have the powers to lay down proper standards of instruction, research, publication and examination and to regulate and promote the academic life of the University and affiliated colleges.</p>
-                  <p className="font-semibold text-[#0D2B5A] mb-2">(2) In particular and without prejudice to the generality of the foregoing provisions, the Academic Council may:</p>
+                  <p className="font-semibold text-heading mb-2">(1) The Academic Council shall be the academic body of the University and shall, subject to the provisions of the Act, the Statutes and the Regulations, have the powers to lay down proper standards of instruction, research, publication and examination and to regulate and promote the academic life of the University and affiliated colleges.</p>
+                  <p className="font-semibold text-heading mb-2">(2) In particular and without prejudice to the generality of the foregoing provisions, the Academic Council may:</p>
                   <LetteredList
                     items={[
                       'advise the Syndicate on academic matters;',
@@ -646,10 +646,10 @@ export default function Act2018Page() {
                 </ActSection>
 
                 <ActSection num="27" title="Boards of Faculty.">
-                  <p className="font-semibold text-[#0D2B5A] mb-2">(1) There shall be a Board of Faculty for each Faculty which shall consist of:</p>
+                  <p className="font-semibold text-heading mb-2">(1) There shall be a Board of Faculty for each Faculty which shall consist of:</p>
                   <LetteredList items={['Dean of the Faculty (Chairperson);', 'Professors and the Chairpersons in the Faculty;', 'two members to be nominated by the Academic Council on the basis of their specialized knowledge of the subjects which, though not assigned to the Faculty, have in the opinion of the Academic Council, important bearing on the subjects assigned to the Faculty;', 'two experts, including at least one woman, in the field from outside the University to be appointed by the Syndicate;', 'one member from amongst the officers of the University to be nominated by the Vice Chancellor.']} />
                   <NumberedList startNum={2} items={['The members, other than ex officio members, of a Board of Faculty shall hold office for a period of three years.', 'The quorum for a meeting of a Board of Faculty shall be one half of the total number of members, a fraction being counted as one.']} />
-                  <p className="font-semibold text-[#0D2B5A] mb-2 mt-4">(4) A Board of Faculty, subject to the general control of the Syndicate and Academic Council, may:</p>
+                  <p className="font-semibold text-heading mb-2 mt-4">(4) A Board of Faculty, subject to the general control of the Syndicate and Academic Council, may:</p>
                   <LetteredList items={['co-ordinate the teaching and research work in the subjects assigned to the Faculty;', 'scrutinize the recommendations of the Board of Studies in the Faculty with regard to the appointment of paper setters and examiners for graduate and postgraduate examinations and to forward the panels of suitable paper setters and examiners for each examination to the Vice Chancellor;', 'consider any other academic matter relating to the Faculty and submit its report to the Academic Council;', 'prepare a comprehensive annual report regarding the performance of each department, constituent college or institute in the Faculty for presentation to the Academic Council;', 'perform such other functions as may be prescribed by Statutes.']} />
                 </ActSection>
 
@@ -675,7 +675,7 @@ export default function Act2018Page() {
                 </ActSection>
 
                 <ActSection num="30" title="Board of Advanced Studies and Research.">
-                  <p className="font-semibold text-[#0D2B5A] mb-2">(1) The Board of Advanced Studies and Research shall consist of:</p>
+                  <p className="font-semibold text-heading mb-2">(1) The Board of Advanced Studies and Research shall consist of:</p>
                   <LetteredList items={['Vice Chancellor (Chairperson);', 'all the Deans;', 'Controller of Examinations;', 'one University Professor from each Faculty to be nominated by the Syndicate;', 'one member from amongst the officers of the University to be nominated by the Vice Chancellor;', 'three members from the relevant field, research organizations and the Government, including at least one woman from any of the categories, to be nominated by the Syndicate;', 'Registrar (Secretary).']} />
                   <NumberedList startNum={2} items={['The term of office of the members of the Board of Advanced Studies and Research, other than ex officio members, shall be three years.', 'The quorum for a meeting of the Board of Advanced Studies and Research shall be one half of the total number of members, a fraction being counted as one.']} />
                 </ActSection>
@@ -703,7 +703,7 @@ export default function Act2018Page() {
                 </ActSection>
 
                 <ActSection num="34" title="Selection Board.">
-                  <p className="font-semibold text-[#0D2B5A] mb-2">(1) The Selection Board shall consist of:</p>
+                  <p className="font-semibold text-heading mb-2">(1) The Selection Board shall consist of:</p>
                   <LetteredList items={['Vice Chancellor (Chairperson);', 'Dean of the Faculty concerned;', 'Chairperson concerned;', 'one member of the Syndicate to be nominated by the Syndicate;', 'one eminent scholar to be nominated by the Syndicate;', 'two experts, including at least one woman, to be nominated by the Government;', 'Registrar (Secretary).']} />
                   <NumberedList startNum={2} items={['The members, other than ex officio members, shall hold office for a period of three years.', 'Five members, including at least one expert, shall constitute the quorum for a meeting of the Selection Board.', 'No member who is a candidate or whose family member is a candidate, for a post to which appointment is to be made, shall take part in the proceedings of the Selection Board for selection of a candidate to such post.', 'In selection of candidates for the post of Professor or Associate Professor, the Selection Board shall co-opt or consult three experts in the subject and in selecting candidates for any other teaching post, two experts in the subject, to be nominated by the Vice Chancellor from a standing list of experts for each subject approved by the Syndicate.', 'The Syndicate may approve or revise the standing list of experts of a subject on the recommendation of the Selection Board.']} />
                 </ActSection>
@@ -714,7 +714,7 @@ export default function Act2018Page() {
                 </ActSection>
 
                 <ActSection num="36" title="Finance and Planning Committee.">
-                  <p className="font-semibold text-[#0D2B5A] mb-2">(1) The Finance and Planning Committee shall consist of:</p>
+                  <p className="font-semibold text-heading mb-2">(1) The Finance and Planning Committee shall consist of:</p>
                   <LetteredList items={['Vice-Chancellor (Chairperson);', 'all the Deans;', 'one member of the Syndicate to be nominated by the Syndicate;', 'one member of the Academic Council to be nominated by the Academic Council;', 'one representative each from Higher Education Department and Finance Department of the Government not below the rank of a Deputy Secretary;', 'Director Planning or any other nominee of the Commission;', 'one nominee, who deals with finance and planning, of Punjab Higher Education Commission;', 'Registrar;', 'Treasurer (Secretary).']} />
                   <NumberedList startNum={2} items={['The term of office of the nominated members shall be three years.', 'Six members of the Finance and Planning Committee shall constitute the quorum for a meeting of the Finance and Planning Committee.']} />
                 </ActSection>
@@ -767,7 +767,7 @@ export default function Act2018Page() {
               <div>
                 <SectionHeader num="V" title="Statutes, Regulations and Rules" />
                 <ActSection num="43" title="Statutes.">
-                  <p className="font-semibold text-[#0D2B5A] mb-2">(1) Subject to the provisions of the Act, the Syndicate may make Statutes to provide for and regulate all or any of the following matters:</p>
+                  <p className="font-semibold text-heading mb-2">(1) Subject to the provisions of the Act, the Syndicate may make Statutes to provide for and regulate all or any of the following matters:</p>
                   <LetteredList
                     items={[
                       'scales of pay, method of recruitment and other terms and conditions of service of officers, teachers and other employees of the University and the constitution of their pension, insurance, gratuity, provident fund and benevolent fund;',
@@ -789,7 +789,7 @@ export default function Act2018Page() {
                 </ActSection>
 
                 <ActSection num="44" title="Regulations.">
-                  <p className="font-semibold text-[#0D2B5A] mb-2">(1) Subject to the provisions of the Act and the Statutes, Regulations may be framed for any of the following matters:</p>
+                  <p className="font-semibold text-heading mb-2">(1) Subject to the provisions of the Act and the Statutes, Regulations may be framed for any of the following matters:</p>
                   <LetteredList
                     items={[
                       'courses of study for degrees, diplomas and certificates of the University;',
@@ -888,8 +888,8 @@ export default function Act2018Page() {
                 </ActSection>
 
                 {/* Footer note */}
-                <div className="mt-12 p-4 bg-[#F5F7FA] border border-black/5 rounded-lg text-[13px] text-[#64748B] leading-relaxed">
-                  <p className="font-medium text-[#0D2B5A]">Note:</p>
+                <div className="mt-12 p-4 bg-bg-alt border border-border rounded-lg text-[13px] text-muted leading-relaxed">
+                  <p className="font-medium text-heading">Note:</p>
                   <p>This Act was passed by the Punjab Assembly on 14 March 2018; assented to by the Governor of the Punjab on 19 March 2018; and, was published in the Punjab Gazette (Extraordinary), dated 20 March 2018, pages 6647-64.</p>
                 </div>
               </div>
@@ -906,7 +906,7 @@ export default function Act2018Page() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-6 right-6 z-50 p-3 bg-[#0D2B5A] text-white rounded-full shadow-lg hover:bg-[#1A3C7A] transition-all duration-300 hover:scale-105 group"
+            className="fixed bottom-6 right-6 z-50 p-3 bg-navy text-white rounded-full shadow-lg hover:bg-navy-light transition-all duration-300 hover:scale-105 group"
             aria-label="Back to top"
           >
             <ArrowUp size={20} className="group-hover:-translate-y-0.5 transition-transform" />

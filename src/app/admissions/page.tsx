@@ -87,10 +87,10 @@ export default function AdmissionsPage() {
                     <div className="space-y-10">
                         <div>
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="p-2 rounded-lg bg-[#C62828]/10 text-[#C62828]">
+                                <div className="p-2 rounded-lg bg-accent/10 text-accent">
                                     <GraduationCap size={22} />
                                 </div>
-                                <h3 className="text-xl font-bold text-[#0D2B5A]">
+                                <h3 className="text-xl font-bold text-heading">
                                     Bachelors of Engineering Technology
                                 </h3>
                             </div>
@@ -98,10 +98,10 @@ export default function AdmissionsPage() {
                                 {bachelorPrograms.map((p) => (
                                     <div
                                         key={p}
-                                        className="flex items-center gap-3 bg-white rounded-xl border border-black/5 p-4 shadow-sm hover:shadow-md transition-shadow hover:border-[#C62828]/20 group"
+                                        className="flex items-center gap-3 bg-surface rounded-xl border border-border p-4 shadow-sm hover:shadow-md transition-shadow hover:border-accent/20 group"
                                     >
-                                        <span className="w-1.5 h-1.5 rounded-full bg-[#C62828] shrink-0" />
-                                        <span className="text-[#1A202C] font-medium text-sm group-hover:text-[#0D2B5A] transition-colors">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                                        <span className="text-heading font-medium text-sm group-hover:text-heading transition-colors">
                                             {p}
                                         </span>
                                     </div>
@@ -109,17 +109,17 @@ export default function AdmissionsPage() {
                             </div>
                         </div>
 
-                        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0D2B5A] to-[#1A3F7A] p-8">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#C62828]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+                        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-navy to-navy-light p-8">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
                             <div className="relative">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <Sparkles size={20} className="text-[#C62828]" />
+                                    <Sparkles size={20} className="text-accent" />
                                     <h3 className="text-lg font-bold text-white">New Programs</h3>
                                 </div>
                                 <div className="space-y-3">
                                     {newPrograms.map((p) => (
                                         <div key={p} className="flex items-start gap-3 text-white/90">
-                                            <span className="text-[#C62828] font-bold text-lg leading-none">•</span>
+                                            <span className="text-accent font-bold text-lg leading-none">•</span>
                                             <span className="text-sm leading-relaxed">{p}</span>
                                         </div>
                                     ))}
@@ -129,10 +129,10 @@ export default function AdmissionsPage() {
 
                         <div>
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="p-2 rounded-lg bg-[#C62828]/10 text-[#C62828]">
+                                <div className="p-2 rounded-lg bg-accent/10 text-accent">
                                     <Award size={22} />
                                 </div>
-                                <h3 className="text-xl font-bold text-[#0D2B5A]">
+                                <h3 className="text-xl font-bold text-heading">
                                     Masters of Engineering Technology
                                 </h3>
                             </div>
@@ -140,10 +140,10 @@ export default function AdmissionsPage() {
                                 {masterPrograms.map((p) => (
                                     <div
                                         key={p}
-                                        className="flex items-center gap-3 bg-white rounded-xl border border-black/5 p-4 shadow-sm hover:shadow-md transition-shadow hover:border-[#C62828]/20 group"
+                                        className="flex items-center gap-3 bg-surface rounded-xl border border-border p-4 shadow-sm hover:shadow-md transition-shadow hover:border-accent/20 group"
                                     >
-                                        <span className="w-1.5 h-1.5 rounded-full bg-[#C62828] shrink-0" />
-                                        <span className="text-[#1A202C] font-medium text-sm group-hover:text-[#0D2B5A] transition-colors">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                                        <span className="text-heading font-medium text-sm group-hover:text-heading transition-colors">
                                             {p}
                                         </span>
                                     </div>
@@ -156,7 +156,7 @@ export default function AdmissionsPage() {
             case 'ads':
                 return (
                     <div className="space-y-6">
-                        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#C62828] to-[#D32F2F] p-8 text-white shadow-xl">
+                        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-accent to-accent-hover p-8 text-white shadow-xl">
                             <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/4" />
                             <div className="relative flex flex-col md:flex-row items-center justify-between gap-4">
                                 <div>
@@ -176,9 +176,9 @@ export default function AdmissionsPage() {
                             </div>
                         </div>
 
-                        <div className="bg-white rounded-2xl border border-black/5 p-6 shadow-sm">
-                            <h4 className="text-lg font-bold text-[#0D2B5A] mb-4 flex items-center gap-2">
-                                <FileText size={18} className="text-[#C62828]" />
+                        <div className="bg-surface rounded-2xl border border-border p-6 shadow-sm">
+                            <h4 className="text-lg font-bold text-heading mb-4 flex items-center gap-2">
+                                <FileText size={18} className="text-accent" />
                                 Latest Admission Notices
                             </h4>
                             <div className="space-y-3">
@@ -189,12 +189,12 @@ export default function AdmissionsPage() {
                                 ].map((notice, i) => (
                                     <div
                                         key={i}
-                                        className="flex items-center justify-between p-4 bg-[#F7FAFC] rounded-xl hover:bg-[#EDF2F7] transition-colors"
+                                        className="flex items-center justify-between p-4 bg-bg-alt rounded-xl hover:bg-border/40 transition-colors"
                                     >
-                                        <span className="text-[#2D3748] font-medium text-sm">
+                                        <span className="text-heading font-medium text-sm">
                                             {notice}
                                         </span>
-                                        <span className="text-[10px] font-bold text-[#C62828] bg-[#C62828]/10 px-3 py-1 rounded-full uppercase tracking-wider">
+                                        <span className="text-[10px] font-bold text-accent bg-accent/10 px-3 py-1 rounded-full uppercase tracking-wider">
                                             New
                                         </span>
                                     </div>
@@ -206,14 +206,14 @@ export default function AdmissionsPage() {
 
             case 'apply':
                 return (
-                    <div className="bg-white rounded-2xl border border-black/5 p-6 md:p-8 shadow-sm">
-                        <h3 className="text-xl font-bold text-[#0D2B5A] mb-8 flex items-center gap-3">
-                            <ClipboardList size={22} className="text-[#C62828]" />
+                    <div className="bg-surface rounded-2xl border border-border p-6 md:p-8 shadow-sm">
+                        <h3 className="text-xl font-bold text-heading mb-8 flex items-center gap-3">
+                            <ClipboardList size={22} className="text-accent" />
                             How To Apply
                         </h3>
                         <div className="relative">
                             {/* Vertical line */}
-                            <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-[#C62828]/10 hidden md:block" />
+                            <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-accent/10 hidden md:block" />
 
                             <div className="space-y-8">
                                 {[
@@ -238,23 +238,23 @@ export default function AdmissionsPage() {
                                 ].map((item, idx) => (
                                     <div key={item.step} className="flex gap-5 relative">
                                         <div className="shrink-0 relative z-10">
-                                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-[#0D2B5A] to-[#1A3F7A] text-white flex items-center justify-center font-bold text-sm md:text-lg shadow-lg shadow-[#0D2B5A]/20">
+                                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-navy to-navy-light text-white flex items-center justify-center font-bold text-sm md:text-lg shadow-lg shadow-navy/20">
                                                 {item.step}
                                             </div>
-                                            <div className="absolute -inset-1 rounded-full bg-[#0D2B5A]/5 blur-md" />
+                                            <div className="absolute -inset-1 rounded-full bg-navy/5 blur-md" />
                                         </div>
                                         <div className="flex-1 pt-1">
                                             <div className="flex items-center gap-3 mb-1">
-                                                <item.icon size={16} className="text-[#C62828]" />
-                                                <h4 className="text-base md:text-lg font-bold text-[#0D2B5A]">
+                                                <item.icon size={16} className="text-accent" />
+                                                <h4 className="text-base md:text-lg font-bold text-heading">
                                                     {item.title}
                                                 </h4>
                                             </div>
-                                            <p className="text-[#4A5568] text-sm leading-relaxed">
+                                            <p className="text-body text-sm leading-relaxed">
                                                 {item.desc}
                                             </p>
                                             {idx < 2 && (
-                                                <div className="hidden md:block absolute left-5 top-12 bottom-0 w-0.5 bg-[#C62828]/10 -translate-x-1/2" />
+                                                <div className="hidden md:block absolute left-5 top-12 bottom-0 w-0.5 bg-accent/10 -translate-x-1/2" />
                                             )}
                                         </div>
                                     </div>
@@ -262,9 +262,9 @@ export default function AdmissionsPage() {
                             </div>
                         </div>
 
-                        <div className="mt-8 p-4 bg-[#C62828]/5 border border-[#C62828]/10 rounded-xl flex items-start gap-3">
-                            <AlertCircle size={18} className="text-[#C62828] shrink-0 mt-0.5" />
-                            <p className="text-sm text-[#C62828] font-medium">
+                        <div className="mt-8 p-4 bg-accent/5 border border-accent/10 rounded-xl flex items-start gap-3">
+                            <AlertCircle size={18} className="text-accent shrink-0 mt-0.5" />
+                            <p className="text-sm text-accent font-medium">
                                 Ensure all documents are attested before submission. Incomplete applications will not be processed.
                             </p>
                         </div>
@@ -274,8 +274,8 @@ export default function AdmissionsPage() {
             case 'dates':
                 return (
                     <div className="space-y-6">
-                        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0D2B5A] to-[#1A3F7A] p-8 text-white shadow-xl">
-                            <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#C62828]/10 rounded-full blur-3xl" />
+                        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-navy to-navy-light p-8 text-white shadow-xl">
+                            <div className="absolute -top-20 -right-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
                             <div className="relative">
                                 <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1 text-xs font-semibold tracking-wider uppercase mb-3">
                                     <Calendar size={14} />
@@ -284,7 +284,7 @@ export default function AdmissionsPage() {
                                 <h3 className="text-2xl font-bold mb-1">Admissions Open for Fall 2026</h3>
                                 <div className="flex items-center gap-3 mt-4 text-white/90">
                                     <div className="flex items-center gap-2 bg-white/10 rounded-lg px-4 py-2 backdrop-blur-sm">
-                                        <Clock size={18} className="text-[#C62828]" />
+                                        <Clock size={18} className="text-accent" />
                                         <span className="text-sm">
                                             Classes Start: <strong className="text-white">31 August 2026</strong>
                                         </span>
@@ -293,12 +293,12 @@ export default function AdmissionsPage() {
                             </div>
                         </div>
 
-                        <div className="bg-white rounded-2xl border border-black/5 p-6 md:p-8 shadow-sm">
+                        <div className="bg-surface rounded-2xl border border-border p-6 md:p-8 shadow-sm">
                             <div className="flex items-center gap-3 mb-5">
-                                <div className="p-2 rounded-lg bg-[#C62828]/10 text-[#C62828]">
+                                <div className="p-2 rounded-lg bg-accent/10 text-accent">
                                     <AlertCircle size={20} />
                                 </div>
-                                <h4 className="text-lg font-bold text-[#0D2B5A]">
+                                <h4 className="text-lg font-bold text-heading">
                                     Limited Seats Available
                                 </h4>
                             </div>
@@ -306,9 +306,9 @@ export default function AdmissionsPage() {
                                 {limitedSeatPrograms.map((p) => (
                                     <div
                                         key={p}
-                                        className="flex items-center gap-2.5 bg-[#F7FAFC] px-4 py-3 rounded-xl text-sm text-[#2D3748] border border-transparent hover:border-[#C62828]/20 hover:bg-white transition-all"
+                                        className="flex items-center gap-2.5 bg-bg-alt px-4 py-3 rounded-xl text-sm text-heading border border-transparent hover:border-accent/20 hover:bg-surface transition-all"
                                     >
-                                        <span className="w-1.5 h-1.5 rounded-full bg-[#C62828] shrink-0" />
+                                        <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
                                         {p}
                                     </div>
                                 ))}
@@ -319,9 +319,9 @@ export default function AdmissionsPage() {
 
             case 'fees':
                 return (
-                    <div className="bg-white rounded-2xl border border-black/5 p-6 md:p-8 shadow-sm">
-                        <h3 className="text-xl font-bold text-[#0D2B5A] mb-6 flex items-center gap-3">
-                            <Wallet size={22} className="text-[#C62828]" />
+                    <div className="bg-surface rounded-2xl border border-border p-6 md:p-8 shadow-sm">
+                        <h3 className="text-xl font-bold text-heading mb-6 flex items-center gap-3">
+                            <Wallet size={22} className="text-accent" />
                             Fee Structure
                         </h3>
                         <div className="grid md:grid-cols-3 gap-4">
@@ -333,15 +333,15 @@ export default function AdmissionsPage() {
                                 <a
                                     key={fee.label}
                                     href={`/downloads/${fee.file}`}
-                                    className="group flex flex-col items-center gap-4 p-8 bg-[#F7FAFC] rounded-2xl border-2 border-dashed border-[#0D2B5A]/10 hover:border-[#C62828] hover:bg-[#C62828]/5 transition-all duration-300"
+                                    className="group flex flex-col items-center gap-4 p-8 bg-bg-alt rounded-2xl border-2 border-dashed border-navy/10 hover:border-accent hover:bg-accent/5 transition-all duration-300"
                                 >
-                                    <div className="p-3 rounded-full bg-[#0D2B5A]/5 group-hover:bg-[#C62828]/10 transition-colors">
-                                        <Download size={28} className="text-[#0D2B5A] group-hover:text-[#C62828] transition-colors" />
+                                    <div className="p-3 rounded-full bg-navy/5 group-hover:bg-accent/10 transition-colors">
+                                        <Download size={28} className="text-heading group-hover:text-accent transition-colors" />
                                     </div>
-                                    <span className="text-sm font-semibold text-[#0D2B5A] text-center group-hover:text-[#C62828] transition-colors">
+                                    <span className="text-sm font-semibold text-heading text-center group-hover:text-accent transition-colors">
                                         {fee.label}
                                     </span>
-                                    <span className="text-xs text-[#4A5568] group-hover:text-[#C62828]/70 transition-colors flex items-center gap-1">
+                                    <span className="text-xs text-body group-hover:text-accent/70 transition-colors flex items-center gap-1">
                                         Download PDF <ArrowRight size={12} />
                                     </span>
                                 </a>
@@ -352,25 +352,25 @@ export default function AdmissionsPage() {
 
             case 'scholarships':
                 return (
-                    <div className="bg-white rounded-2xl border border-black/5 p-6 md:p-10 shadow-sm text-center">
-                        <div className="inline-flex p-4 rounded-full bg-[#C62828]/10 text-[#C62828] mb-4">
+                    <div className="bg-surface rounded-2xl border border-border p-6 md:p-10 shadow-sm text-center">
+                        <div className="inline-flex p-4 rounded-full bg-accent/10 text-accent mb-4">
                             <Award size={40} />
                         </div>
-                        <h3 className="text-2xl font-bold text-[#0D2B5A] mb-1">Scholarships at PTUT</h3>
-                        <p className="text-[#4A5568] text-lg">Academic Year 2026-27</p>
-                        <div className="mt-6 max-w-2xl mx-auto p-6 bg-[#F7FAFC] rounded-2xl text-left">
-                            <p className="text-[#4A5568] leading-relaxed text-sm">
+                        <h3 className="text-2xl font-bold text-heading mb-1">Scholarships at PTUT</h3>
+                        <p className="text-body text-lg">Academic Year 2026-27</p>
+                        <div className="mt-6 max-w-2xl mx-auto p-6 bg-bg-alt rounded-2xl text-left">
+                            <p className="text-body leading-relaxed text-sm">
                                 Merit-based and need-based scholarships are available for deserving students. Details regarding application procedures, eligibility, and award amounts will be published on the official notice board and communicated to enrolled students at the commencement of the session.
                             </p>
                         </div>
                         <div className="mt-6 flex flex-wrap justify-center gap-3">
-                            <span className="px-4 py-2 bg-[#0D2B5A]/5 rounded-full text-xs font-semibold text-[#0D2B5A]">
+                            <span className="px-4 py-2 bg-navy/5 rounded-full text-xs font-semibold text-heading">
                                 Merit Based
                             </span>
-                            <span className="px-4 py-2 bg-[#0D2B5A]/5 rounded-full text-xs font-semibold text-[#0D2B5A]">
+                            <span className="px-4 py-2 bg-navy/5 rounded-full text-xs font-semibold text-heading">
                                 Need Based
                             </span>
-                            <span className="px-4 py-2 bg-[#0D2B5A]/5 rounded-full text-xs font-semibold text-[#0D2B5A]">
+                            <span className="px-4 py-2 bg-navy/5 rounded-full text-xs font-semibold text-heading">
                                 Special Quota
                             </span>
                         </div>
@@ -379,29 +379,29 @@ export default function AdmissionsPage() {
 
             case 'quota':
                 return (
-                    <div className="bg-white rounded-2xl border border-black/5 p-6 md:p-8 shadow-sm">
-                        <h3 className="text-xl font-bold text-[#0D2B5A] mb-6 flex items-center gap-3">
-                            <PieChart size={22} className="text-[#C62828]" />
+                    <div className="bg-surface rounded-2xl border border-border p-6 md:p-8 shadow-sm">
+                        <h3 className="text-xl font-bold text-heading mb-6 flex items-center gap-3">
+                            <PieChart size={22} className="text-accent" />
                             Admission Quota Distribution
                         </h3>
                         <div className="space-y-3">
                             {quotaItems.map((item) => (
                                 <div
                                     key={item.label}
-                                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-4 bg-[#F7FAFC] rounded-xl hover:bg-[#EDF2F7] transition-colors"
+                                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-4 bg-bg-alt rounded-xl hover:bg-border/40 transition-colors"
                                 >
-                                    <span className="text-[#2D3748] font-medium text-sm">
+                                    <span className="text-heading font-medium text-sm">
                                         {item.label}
                                     </span>
-                                    <span className="text-lg font-bold text-[#C62828] bg-white px-4 py-1 rounded-lg shadow-sm self-start sm:self-auto">
+                                    <span className="text-lg font-bold text-accent bg-surface px-4 py-1 rounded-lg shadow-sm self-start sm:self-auto">
                                         {item.value}
                                     </span>
                                 </div>
                             ))}
                         </div>
-                        <div className="mt-6 p-4 bg-[#0D2B5A]/5 rounded-xl flex items-start gap-3">
-                            <BadgeCheck size={18} className="text-[#0D2B5A] shrink-0 mt-0.5" />
-                            <p className="text-sm text-[#4A5568]">
+                        <div className="mt-6 p-4 bg-navy/5 rounded-xl flex items-start gap-3">
+                            <BadgeCheck size={18} className="text-heading shrink-0 mt-0.5" />
+                            <p className="text-sm text-body">
                                 All quotas are strictly adhered to as per the admission policy of Punjab Tianjin University of Technology.
                             </p>
                         </div>
@@ -411,61 +411,61 @@ export default function AdmissionsPage() {
             case 'eligibility':
                 return (
                     <div className="space-y-6">
-                        <div className="bg-white rounded-2xl border border-black/5 p-6 md:p-8 shadow-sm">
-                            <h3 className="text-xl font-bold text-[#0D2B5A] mb-5 flex items-center gap-3">
-                                <GraduationCap size={22} className="text-[#C62828]" />
+                        <div className="bg-surface rounded-2xl border border-border p-6 md:p-8 shadow-sm">
+                            <h3 className="text-xl font-bold text-heading mb-5 flex items-center gap-3">
+                                <GraduationCap size={22} className="text-accent" />
                                 Bachelor Degree Requirements
                             </h3>
                             <ul className="space-y-4">
                                 <li className="flex items-start gap-3">
-                                    <div className="p-1 rounded-full bg-[#C62828]/10 text-[#C62828] shrink-0 mt-0.5">
+                                    <div className="p-1 rounded-full bg-accent/10 text-accent shrink-0 mt-0.5">
                                         <CheckCircle size={16} />
                                     </div>
-                                    <span className="text-[#4A5568] text-sm leading-relaxed">
-                                        Candidates should have at least <strong className="text-[#0D2B5A]">50% marks</strong> in the relevant discipline of DAE / FSC / ICS / FA or Equivalent.
+                                    <span className="text-body text-sm leading-relaxed">
+                                        Candidates should have at least <strong className="text-heading">50% marks</strong> in the relevant discipline of DAE / FSC / ICS / FA or Equivalent.
                                     </span>
                                 </li>
                                 <li className="flex items-start gap-3">
-                                    <div className="p-1 rounded-full bg-[#C62828]/10 text-[#C62828] shrink-0 mt-0.5">
+                                    <div className="p-1 rounded-full bg-accent/10 text-accent shrink-0 mt-0.5">
                                         <CheckCircle size={16} />
                                     </div>
-                                    <span className="text-[#4A5568] text-sm leading-relaxed">
+                                    <span className="text-body text-sm leading-relaxed">
                                         FSc (Pre-medical) is also eligible with the condition to pass deficiency courses.
                                     </span>
                                 </li>
                             </ul>
                         </div>
 
-                        <div className="bg-white rounded-2xl border border-black/5 p-6 md:p-8 shadow-sm">
-                            <h3 className="text-xl font-bold text-[#0D2B5A] mb-5 flex items-center gap-3">
-                                <Award size={22} className="text-[#C62828]" />
+                        <div className="bg-surface rounded-2xl border border-border p-6 md:p-8 shadow-sm">
+                            <h3 className="text-xl font-bold text-heading mb-5 flex items-center gap-3">
+                                <Award size={22} className="text-accent" />
                                 Masters Degree Requirements
                             </h3>
-                            <p className="text-[#4A5568] text-sm leading-relaxed mb-5">
-                                Candidates must have earned 16 years of education: <strong className="text-[#0D2B5A]">B.Sc / B.E / B.Tech (Hons.)</strong> degree in the relevant disciplines in:
+                            <p className="text-body text-sm leading-relaxed mb-5">
+                                Candidates must have earned 16 years of education: <strong className="text-heading">B.Sc / B.E / B.Tech (Hons.)</strong> degree in the relevant disciplines in:
                             </p>
                             <ul className="space-y-3">
                                 <li className="flex items-start gap-3">
-                                    <div className="p-1 rounded-full bg-[#C62828]/10 text-[#C62828] shrink-0 mt-0.5">
+                                    <div className="p-1 rounded-full bg-accent/10 text-accent shrink-0 mt-0.5">
                                         <CheckCircle size={16} />
                                     </div>
-                                    <span className="text-[#4A5568] text-sm leading-relaxed">
-                                        First division (60% of the Annual System), <strong className="text-[#0D2B5A]">OR</strong>
+                                    <span className="text-body text-sm leading-relaxed">
+                                        First division (60% of the Annual System), <strong className="text-heading">OR</strong>
                                     </span>
                                 </li>
                                 <li className="flex items-start gap-3">
-                                    <div className="p-1 rounded-full bg-[#C62828]/10 text-[#C62828] shrink-0 mt-0.5">
+                                    <div className="p-1 rounded-full bg-accent/10 text-accent shrink-0 mt-0.5">
                                         <CheckCircle size={16} />
                                     </div>
-                                    <span className="text-[#4A5568] text-sm leading-relaxed">
-                                        At least <strong className="text-[#0D2B5A]">CGPA 2.50 out of 4.00</strong> (Semester System).
+                                    <span className="text-body text-sm leading-relaxed">
+                                        At least <strong className="text-heading">CGPA 2.50 out of 4.00</strong> (Semester System).
                                     </span>
                                 </li>
                             </ul>
                         </div>
 
-                        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#0D2B5A] to-[#1A3F7A] p-6 md:p-8 text-white shadow-xl">
-                            <div className="absolute top-0 right-0 w-48 h-48 bg-[#C62828]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+                        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-navy to-navy-light p-6 md:p-8 text-white shadow-xl">
+                            <div className="absolute top-0 right-0 w-48 h-48 bg-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
                             <div className="relative flex flex-col md:flex-row items-center justify-between gap-4">
                                 <div>
                                     <h4 className="font-bold text-lg mb-1">Admission Criterion</h4>
@@ -473,7 +473,7 @@ export default function AdmissionsPage() {
                                 </div>
                                 <a
                                     href="#"
-                                    className="shrink-0 inline-flex items-center gap-2 bg-[#C62828] text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-[#D32F2F] transition-colors shadow-lg shadow-[#C62828]/20"
+                                    className="shrink-0 inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-accent-hover transition-colors shadow-lg shadow-accent/20"
                                 >
                                     Download Criterion <Download size={16} />
                                 </a>
@@ -484,32 +484,32 @@ export default function AdmissionsPage() {
 
             case 'test':
                 return (
-                    <div className="bg-white rounded-2xl border border-black/5 p-6 md:p-8 shadow-sm">
-                        <h3 className="text-xl font-bold text-[#0D2B5A] mb-6 flex items-center gap-3">
-                            <BookOpen size={22} className="text-[#C62828]" />
+                    <div className="bg-surface rounded-2xl border border-border p-6 md:p-8 shadow-sm">
+                        <h3 className="text-xl font-bold text-heading mb-6 flex items-center gap-3">
+                            <BookOpen size={22} className="text-accent" />
                             Entrance Test Subjects & Weightage
                         </h3>
                         <div className="grid gap-3">
                             {testSubjects.map((t) => (
                                 <div
                                     key={t.subject}
-                                    className="flex items-center justify-between p-5 bg-[#F7FAFC] rounded-xl hover:bg-[#EDF2F7] transition-colors"
+                                    className="flex items-center justify-between p-5 bg-bg-alt rounded-xl hover:bg-border/40 transition-colors"
                                 >
                                     <div className="flex items-center gap-3">
-                                        <div className="w-2 h-2 rounded-full bg-[#0D2B5A]" />
-                                        <span className="text-[#2D3748] font-medium text-sm">
+                                        <div className="w-2 h-2 rounded-full bg-navy" />
+                                        <span className="text-heading font-medium text-sm">
                                             {t.subject}
                                         </span>
                                     </div>
-                                    <span className="text-lg font-bold text-[#C62828] bg-white px-4 py-1 rounded-lg shadow-sm">
+                                    <span className="text-lg font-bold text-accent bg-surface px-4 py-1 rounded-lg shadow-sm">
                                         {t.percent}
                                     </span>
                                 </div>
                             ))}
                         </div>
-                        <div className="mt-6 p-4 bg-[#C62828]/5 border border-[#C62828]/10 rounded-xl flex items-start gap-3">
-                            <AlertCircle size={18} className="text-[#C62828] shrink-0 mt-0.5" />
-                            <p className="text-sm text-[#C62828] font-medium">
+                        <div className="mt-6 p-4 bg-accent/5 border border-accent/10 rounded-xl flex items-start gap-3">
+                            <AlertCircle size={18} className="text-accent shrink-0 mt-0.5" />
+                            <p className="text-sm text-accent font-medium">
                                 The total test is cumulative. Prepare all subjects thoroughly for maximum scoring potential.
                             </p>
                         </div>
@@ -518,27 +518,27 @@ export default function AdmissionsPage() {
 
             case 'exemption':
                 return (
-                    <div className="bg-white rounded-2xl border border-black/5 p-6 md:p-10 shadow-sm text-center">
-                        <div className="inline-flex p-4 rounded-full bg-[#C62828]/10 text-[#C62828] mb-4">
+                    <div className="bg-surface rounded-2xl border border-border p-6 md:p-10 shadow-sm text-center">
+                        <div className="inline-flex p-4 rounded-full bg-accent/10 text-accent mb-4">
                             <ShieldCheck size={40} />
                         </div>
-                        <h3 className="text-2xl font-bold text-[#0D2B5A] mb-3">Test Exemption Policy</h3>
-                        <p className="text-[#4A5568] leading-relaxed max-w-2xl mx-auto text-sm">
+                        <h3 className="text-2xl font-bold text-heading mb-3">Test Exemption Policy</h3>
+                        <p className="text-body leading-relaxed max-w-2xl mx-auto text-sm">
                             The university will conduct its own Entrance Test. However, candidates holding valid scores from the following recognised examinations are also acceptable in lieu of the PTUT entry test.
                         </p>
                         <div className="flex flex-wrap justify-center gap-3 mt-6">
                             {['UET Entry Test', 'E-CAT', 'USAT'].map((test) => (
                                 <span
                                     key={test}
-                                    className="px-6 py-3 bg-gradient-to-br from-[#0D2B5A] to-[#1A3F7A] text-white rounded-xl font-bold text-sm shadow-lg shadow-[#0D2B5A]/20 hover:shadow-xl transition-shadow"
+                                    className="px-6 py-3 bg-gradient-to-br from-navy to-navy-light text-white rounded-xl font-bold text-sm shadow-lg shadow-navy/20 hover:shadow-xl transition-shadow"
                                 >
                                     {test}
                                 </span>
                             ))}
                         </div>
-                        <div className="mt-6 p-4 bg-[#F7FAFC] rounded-xl max-w-md mx-auto">
-                            <p className="text-xs text-[#4A5568]">
-                                <span className="font-bold text-[#0D2B5A]">Note:</span> Valid scores must be from the last 2 years.
+                        <div className="mt-6 p-4 bg-bg-alt rounded-xl max-w-md mx-auto">
+                            <p className="text-xs text-body">
+                                <span className="font-bold text-heading">Note:</span> Valid scores must be from the last 2 years.
                             </p>
                         </div>
                     </div>
@@ -547,55 +547,55 @@ export default function AdmissionsPage() {
             case 'contact':
                 return (
                     <div className="grid md:grid-cols-2 gap-6">
-                        <div className="bg-white rounded-2xl border border-black/5 p-6 md:p-8 shadow-sm">
-                            <h3 className="text-xl font-bold text-[#0D2B5A] mb-6 flex items-center gap-3">
-                                <Phone size={22} className="text-[#C62828]" />
+                        <div className="bg-surface rounded-2xl border border-border p-6 md:p-8 shadow-sm">
+                            <h3 className="text-xl font-bold text-heading mb-6 flex items-center gap-3">
+                                <Phone size={22} className="text-accent" />
                                 Admission Office
                             </h3>
                             <div className="space-y-5">
-                                <div className="flex items-start gap-4 p-4 bg-[#F7FAFC] rounded-xl">
-                                    <div className="p-2 rounded-lg bg-[#C62828]/10 text-[#C62828] shrink-0">
+                                <div className="flex items-start gap-4 p-4 bg-bg-alt rounded-xl">
+                                    <div className="p-2 rounded-lg bg-accent/10 text-accent shrink-0">
                                         <MapPin size={18} />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-[#0D2B5A] text-sm">Punjab Tianjin University of Technology</p>
-                                        <p className="text-[#4A5568] text-xs">Sector C-II Township Lahore, Punjab 54770, Pakistan</p>
+                                        <p className="font-bold text-heading text-sm">Punjab Tianjin University of Technology</p>
+                                        <p className="text-body text-xs">Sector C-II Township Lahore, Punjab 54770, Pakistan</p>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-4 p-4 bg-[#F7FAFC] rounded-xl">
-                                    <div className="p-2 rounded-lg bg-[#C62828]/10 text-[#C62828] shrink-0">
+                                <div className="flex items-center gap-4 p-4 bg-bg-alt rounded-xl">
+                                    <div className="p-2 rounded-lg bg-accent/10 text-accent shrink-0">
                                         <PhoneCall size={18} />
                                     </div>
                                     <div>
-                                        <p className="text-xs text-[#64748B]">Call us</p>
-                                        <p className="font-bold text-[#0D2B5A] text-sm">+92 42 9933 2439</p>
+                                        <p className="text-xs text-muted">Call us</p>
+                                        <p className="font-bold text-heading text-sm">+92 42 9933 2439</p>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-4 p-4 bg-[#F7FAFC] rounded-xl">
-                                    <div className="p-2 rounded-lg bg-[#C62828]/10 text-[#C62828] shrink-0">
+                                <div className="flex items-center gap-4 p-4 bg-bg-alt rounded-xl">
+                                    <div className="p-2 rounded-lg bg-accent/10 text-accent shrink-0">
                                         <MessageCircle size={18} />
                                     </div>
                                     <div>
-                                        <p className="text-xs text-[#64748B]">WhatsApp</p>
-                                        <p className="font-bold text-[#0D2B5A] text-sm">0309-7888547</p>
+                                        <p className="text-xs text-muted">WhatsApp</p>
+                                        <p className="font-bold text-heading text-sm">0309-7888547</p>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-4 p-4 bg-[#F7FAFC] rounded-xl">
-                                    <div className="p-2 rounded-lg bg-[#C62828]/10 text-[#C62828] shrink-0">
+                                <div className="flex items-center gap-4 p-4 bg-bg-alt rounded-xl">
+                                    <div className="p-2 rounded-lg bg-accent/10 text-accent shrink-0">
                                         <Mail size={18} />
                                     </div>
                                     <div>
-                                        <p className="text-xs text-[#64748B]">Email</p>
-                                        <p className="font-bold text-[#0D2B5A] text-sm">admissions@ptut.edu.pk</p>
+                                        <p className="text-xs text-muted">Email</p>
+                                        <p className="font-bold text-heading text-sm">admissions@ptut.edu.pk</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0D2B5A] to-[#1A3F7A] p-6 md:p-8 text-white shadow-xl flex flex-col justify-center">
-                            <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#C62828]/10 rounded-full blur-3xl" />
+                        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-navy to-navy-light p-6 md:p-8 text-white shadow-xl flex flex-col justify-center">
+                            <div className="absolute -top-20 -right-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
                             <div className="relative">
-                                <div className="inline-flex p-3 rounded-full bg-white/10 text-[#C62828] mb-4">
+                                <div className="inline-flex p-3 rounded-full bg-white/10 text-accent mb-4">
                                     <Users size={24} />
                                 </div>
                                 <h4 className="text-xl font-bold mb-2">Need Assistance?</h4>
@@ -604,7 +604,7 @@ export default function AdmissionsPage() {
                                 </p>
                                 <a
                                     href="mailto:admissions@ptut.edu.pk"
-                                    className="inline-flex items-center justify-center gap-2 bg-[#C62828] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#D32F2F] transition-colors shadow-lg shadow-[#C62828]/20"
+                                    className="inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 rounded-xl font-semibold hover:bg-accent-hover transition-colors shadow-lg shadow-accent/20"
                                 >
                                     Email Admission Office <ExternalLink size={16} />
                                 </a>
@@ -623,17 +623,17 @@ export default function AdmissionsPage() {
             <Header />
             <main className="pt-[72px]">
                 {/* Page Hero */}
-                <section className="bg-[#0D2B5A] text-white py-16 border-b-4 border-[#C62828] relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-[#C62828]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#C62828]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3" />
+                <section className="bg-navy text-white py-16 border-b-4 border-accent relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3" />
                     <div className="max-w-[1240px] mx-auto px-6 lg:px-8 relative">
                         <ScrollReveal>
-                            <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#C62828] uppercase tracking-widest mb-3 bg-white/5 backdrop-blur-sm px-4 py-1.5 rounded-full border border-white/5">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#C62828] animate-pulse" />
+                            <div className="inline-flex items-center gap-2 text-xs font-semibold text-accent uppercase tracking-widest mb-3 bg-white/5 backdrop-blur-sm px-4 py-1.5 rounded-full border border-white/5">
+                                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                                 Fall 2026
                             </div>
                             <h1 className="text-[clamp(32px,4vw,56px)] font-extrabold leading-tight tracking-tight">
-                                Admissions <span className="text-[#C62828]">Fall 2026</span>
+                                Admissions <span className="text-accent">Fall 2026</span>
                             </h1>
                             <p className="mt-4 text-white/80 max-w-[60ch] leading-relaxed text-sm md:text-base">
                                 Begin your journey at Pakistan&apos;s First Technology University. Explore programs, check eligibility, and apply online today.
@@ -643,12 +643,12 @@ export default function AdmissionsPage() {
                 </section>
 
                 {/* Sidebar Tabs Layout */}
-                <section className="py-8 bg-[#F7FAFC] min-h-[60vh]">
+                <section className="py-8 bg-bg-alt min-h-[60vh]">
                     <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
                         <div className="flex flex-col md:flex-row gap-8">
                             {/* Sidebar */}
                             <aside className="md:w-64 lg:w-72 shrink-0">
-                                <div className="sticky top-[88px] bg-white rounded-2xl border border-black/5 shadow-sm p-3 max-h-[calc(100vh-120px)] overflow-y-auto">
+                                <div className="sticky top-[88px] bg-surface rounded-2xl border border-border shadow-sm p-3 max-h-[calc(100vh-120px)] overflow-y-auto">
                                     <nav className="space-y-1">
                                         {tabs.map((tab) => {
                                             const Icon = tab.icon;
@@ -659,14 +659,14 @@ export default function AdmissionsPage() {
                                                     onClick={() => setActiveTab(tab.id)}
                                                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 text-left ${
                                                         isActive
-                                                            ? 'bg-[#0D2B5A] text-white shadow-md shadow-[#0D2B5A]/10'
-                                                            : 'text-[#4A5568] hover:bg-[#F7FAFC] hover:text-[#0D2B5A]'
+                                                            ? 'bg-navy text-white shadow-md shadow-navy/10'
+                                                            : 'text-body hover:bg-bg-alt hover:text-heading'
                                                     }`}
                                                 >
-                                                    <Icon size={18} className={isActive ? 'text-[#C62828]' : 'opacity-70'} />
+                                                    <Icon size={18} className={isActive ? 'text-accent' : 'opacity-70'} />
                                                     <span className="flex-1">{tab.label}</span>
                                                     {isActive && (
-                                                        <span className="w-1.5 h-1.5 rounded-full bg-[#C62828] animate-pulse" />
+                                                        <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                                                     )}
                                                 </button>
                                             );

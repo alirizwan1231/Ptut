@@ -27,7 +27,7 @@ export default function MeritListPage() {
     <>
       <Header />
       <main>
-        <section className="bg-[#0D2B5A] text-white pt-32 pb-16 border-b-4 border-[#C62828]">
+        <section className="bg-navy text-white pt-32 pb-16 border-b-4 border-accent">
           <div className="max-w-[1240px] mx-auto px-6">
             <h1 className="text-[clamp(32px,4vw,52px)] font-extrabold tracking-tight">Merit Lists</h1>
             <p className="mt-4 text-white/70 max-w-2xl text-lg">
@@ -36,15 +36,15 @@ export default function MeritListPage() {
           </div>
         </section>
 
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-bg">
           <div className="max-w-[1240px] mx-auto px-6">
             <ScrollReveal>
-              <div className="bg-[#F5F7FA] border-l-4 border-[#C62828] rounded-r-xl p-6 md:p-8">
+              <div className="bg-bg-alt border-l-4 border-accent rounded-r-xl p-6 md:p-8">
                 <div className="flex items-start gap-4">
-                  <AlertCircle className="text-[#C62828] shrink-0 mt-1" size={24} />
+                  <AlertCircle className="text-accent shrink-0 mt-1" size={24} />
                   <div>
-                    <h2 className="text-lg font-bold text-[#0D2B5A] mb-2">Instructions for Selected Candidates</h2>
-                    <p className="text-[#4A5568] leading-relaxed">
+                    <h2 className="text-lg font-bold text-heading mb-2">Instructions for Selected Candidates</h2>
+                    <p className="text-body leading-relaxed">
                       The selected candidates are directed to download fee challan (available on website), fill it with your details and pay the same in any branch of BOP. After payment, visit the admissions office along with original documents and 4 sets of photocopies that includes Matric/O Levels, Intermediate P-1/DAE P-II/A Levels, B.Form/CNIC, Domicile, passport size pictures (4 No.s) along with undertaking form (available on website).
                     </p>
                   </div>
@@ -54,14 +54,14 @@ export default function MeritListPage() {
           </div>
         </section>
 
-        <section className="pb-24 bg-white">
+        <section className="pb-24 bg-bg">
           <div className="max-w-[1240px] mx-auto px-6">
             <ScrollReveal>
               <div className="mb-10">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#C62828] uppercase tracking-widest mb-3">
+                <span className="inline-flex items-center gap-2 text-xs font-semibold text-accent uppercase tracking-widest mb-3">
                   <span className="text-[9px]">◆</span> Downloads
                 </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-[#0D2B5A]">Provisional Phase I — Second Merit List</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-heading">Provisional Phase I — Second Merit List</h2>
               </div>
             </ScrollReveal>
 
@@ -70,16 +70,16 @@ export default function MeritListPage() {
                 <ScrollReveal key={i} delay={i * 0.05}>
                   <a
                     href="#"
-                    className="group flex items-center gap-4 p-5 bg-[#F5F7FA] rounded-xl border border-black/5 hover:border-[#C62828]/30 hover:shadow-md transition-all"
+                    className="group flex items-center gap-4 p-5 bg-bg-alt rounded-xl border border-border hover:border-accent/30 hover:shadow-md transition-all"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-[#0D2B5A] text-white flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center shrink-0">
                       {item.type === 'FORM' ? <FileText size={18} /> : item.type === 'CHALLAN' ? <ClipboardList size={18} /> : <ListChecks size={18} />}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-[10px] font-bold text-[#C62828] tracking-widest uppercase mb-0.5">{item.type}</div>
-                      <div className="text-sm font-semibold text-[#0D2B5A] group-hover:text-[#C62828] transition-colors truncate">{item.title}</div>
+                      <div className="text-[10px] font-bold text-accent tracking-widest uppercase mb-0.5">{item.type}</div>
+                      <div className="text-sm font-semibold text-heading group-hover:text-accent transition-colors truncate">{item.title}</div>
                     </div>
-                    <Download size={16} className="text-[#64748B] group-hover:text-[#C62828] transition-colors shrink-0" />
+                    <Download size={16} className="text-muted group-hover:text-accent transition-colors shrink-0" />
                   </a>
                 </ScrollReveal>
               ))}

@@ -16,8 +16,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const pathname = usePathname();
 
   return (
-    <div className="min-h-screen bg-white pt-[72px]">
-      <div className="bg-[#0D2B5A] text-white py-16 border-b-4 border-[#C62828]">
+    <div className="min-h-screen bg-bg pt-[72px]">
+      <div className="bg-navy text-white py-16 border-b-4 border-accent">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
           <div className="flex items-center gap-2 text-sm text-white/60 mb-3">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -39,7 +39,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-12">
         <div className="flex flex-col lg:flex-row gap-12">
           <aside className="lg:w-64 shrink-0">
-            <div className="sticky top-24 bg-[#F5F7FA] rounded-xl p-2">
+            <div className="sticky top-24 bg-bg-alt rounded-xl p-2">
               <nav className="space-y-1">
                 {adminLinks.map((link) => {
                   const active = pathname === link.href;
@@ -49,8 +49,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                       href={link.href}
                       className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${
                         active
-                          ? 'bg-[#0D2B5A] text-white shadow-md'
-                          : 'text-[#4A5568] hover:bg-white hover:text-[#0D2B5A]'
+                          ? 'bg-navy text-white shadow-md'
+                          : 'text-body hover:bg-surface hover:text-heading'
                       }`}
                     >
                       {link.label}

@@ -34,7 +34,7 @@ export default function ProgramPage({ params }: Props) {
   const faculty = staffMembers.filter((s) => program.facultySlugs.includes(s.slug));
 
   return (
-    <main className="pt-28 pb-24 bg-gradient-to-b from-white to-[#fafbfc] min-h-screen">
+    <main className="pt-28 pb-24 bg-gradient-to-b from-bg to-bg-alt min-h-screen">
       <div className="max-w-[1240px] mx-auto px-6 lg:px-8 space-y-24">
         <ProgramHero program={program} />
         <ProgramMission mission={program.mission} />

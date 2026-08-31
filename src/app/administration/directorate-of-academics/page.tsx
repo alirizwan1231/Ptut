@@ -38,8 +38,8 @@ export default function DirectoratePage() {
   return (
     <div className="space-y-12">
       <section>
-        <h3 className="text-xl font-bold text-[#0D2B5A] mb-4">Introduction</h3>
-        <div className="space-y-4 text-[#4A5568] leading-relaxed">
+        <h3 className="text-xl font-bold text-heading mb-4">Introduction</h3>
+        <div className="space-y-4 text-body leading-relaxed">
           <p>
             The Directorate of Academics develops, reviews, and monitors academic curricula and policies in line with international best practices, market needs, and accreditation requirements. It ensures the effective implementation of these policies across the University.
           </p>
@@ -53,35 +53,35 @@ export default function DirectoratePage() {
       </section>
 
       <section>
-        <h3 className="text-xl font-bold text-[#0D2B5A] mb-6">Functions</h3>
+        <h3 className="text-xl font-bold text-heading mb-6">Functions</h3>
         <div className="grid gap-4">
           {functions.map((item, i) => (
-            <div key={i} className="flex items-start gap-4 p-5 bg-white border border-black/5 rounded-xl shadow-sm">
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#C62828] text-white text-xs font-bold shrink-0">
+            <div key={i} className="flex items-start gap-4 p-5 bg-surface border border-border rounded-xl shadow-sm">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-accent text-white text-xs font-bold shrink-0">
                 {i + 1}
               </span>
-              <p className="text-sm text-[#4A5568] leading-relaxed pt-1">{item}</p>
+              <p className="text-sm text-body leading-relaxed pt-1">{item}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section>
-        <h3 className="text-xl font-bold text-[#0D2B5A] mb-6">Our Team</h3>
+        <h3 className="text-xl font-bold text-heading mb-6">Our Team</h3>
         <div className="grid md:grid-cols-2 gap-6">
           {team.map((person, i) => (
-            <div key={i} className="bg-white border border-black/5 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-16 h-16 rounded-full bg-[#0D2B5A]/5 flex items-center justify-center text-[#0D2B5A] mb-4">
+            <div key={i} className="bg-surface border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-16 h-16 rounded-full bg-navy/5 flex items-center justify-center text-heading mb-4">
                 <User size={28} />
               </div>
-              <h4 className="text-lg font-bold text-[#0D2B5A] mb-1">{person.name}</h4>
-              <div className="text-sm font-semibold text-[#C62828] mb-4">{person.role}</div>
+              <h4 className="text-lg font-bold text-heading mb-1">{person.name}</h4>
+              <div className="text-sm font-semibold text-accent mb-4">{person.role}</div>
               <div className="space-y-2 text-sm">
-                <a href={`mailto:${person.email}`} className="flex items-center gap-2.5 text-[#4A5568] hover:text-[#C62828] transition-colors">
+                <a href={`mailto:${person.email}`} className="flex items-center gap-2.5 text-body hover:text-accent transition-colors">
                   <Mail size={15} className="shrink-0" />
                   <span className="break-all">{person.email}</span>
                 </a>
-                <div className="flex items-center gap-2.5 text-[#4A5568]">
+                <div className="flex items-center gap-2.5 text-body">
                   <Phone size={15} className="shrink-0" />
                   <span>{person.phone}</span>
                 </div>
@@ -91,36 +91,36 @@ export default function DirectoratePage() {
         </div>
       </section>
 
-      <section className="bg-[#F5F7FA] rounded-xl p-8">
-        <h3 className="text-lg font-bold text-[#0D2B5A] mb-4 flex items-center gap-2">
-          <MapPin size={20} className="text-[#C62828]" /> Contact
+      <section className="bg-bg-alt rounded-xl p-8">
+        <h3 className="text-lg font-bold text-heading mb-4 flex items-center gap-2">
+          <MapPin size={20} className="text-accent" /> Contact
         </h3>
-        <div className="space-y-1 text-sm text-[#4A5568]">
-          <p className="font-medium text-[#121826]">Directorate of Academics</p>
+        <div className="space-y-1 text-sm text-body">
+          <p className="font-medium text-heading">Directorate of Academics</p>
           <p>Room #108, First Floor, Academic Block</p>
           <p>Punjab Tianjin University of Technology, Lahore</p>
-          <a href="mailto:academics@ptut.edu.pk" className="inline-flex items-center gap-2 text-[#C62828] font-medium mt-2 hover:underline">
+          <a href="mailto:academics@ptut.edu.pk" className="inline-flex items-center gap-2 text-accent font-medium mt-2 hover:underline">
             <Mail size={14} /> academics@ptut.edu.pk
           </a>
         </div>
       </section>
 
       <section>
-        <h3 className="text-xl font-bold text-[#0D2B5A] mb-6">Downloads</h3>
+        <h3 className="text-xl font-bold text-heading mb-6">Downloads</h3>
         <div className="grid md:grid-cols-2 gap-4">
           {downloads.map((item, i) => (
             <a
               key={i}
               href="#"
-              className="flex items-center gap-4 p-5 bg-white border border-black/5 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group"
+              className="flex items-center gap-4 p-5 bg-surface border border-border rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group"
             >
-              <div className="w-10 h-10 rounded-lg bg-[#0D2B5A]/5 text-[#0D2B5A] flex items-center justify-center group-hover:bg-[#C62828] group-hover:text-white transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-navy/5 text-heading flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-colors">
                 <item.icon size={18} />
               </div>
-              <span className="text-sm font-semibold text-[#121826] group-hover:text-[#C62828] transition-colors">
+              <span className="text-sm font-semibold text-heading group-hover:text-accent transition-colors">
                 {item.label}
               </span>
-              <Download size={16} className="ml-auto text-[#64748B] group-hover:text-[#C62828] transition-colors" />
+              <Download size={16} className="ml-auto text-muted group-hover:text-accent transition-colors" />
             </a>
           ))}
         </div>

@@ -13,11 +13,11 @@ export default function ProgramMission({ mission }: Props) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.7 }}
-      className="relative bg-[#0D2B5A] rounded-2xl p-8 lg:p-12 text-white overflow-hidden border border-[#0D2B5A]"
+      className="relative bg-navy rounded-2xl p-8 lg:p-12 text-white overflow-hidden border border-navy"
     >
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#C62828]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       <div className="relative z-10 flex flex-col lg:flex-row gap-8 items-start">
-        <div className="w-14 h-14 rounded-xl bg-[#C62828] flex items-center justify-center shrink-0 shadow-lg shadow-[#C62828]/30">
+        <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center shrink-0 shadow-lg shadow-accent/30">
           <Target size={28} className="text-white" />
         </div>
         <div>

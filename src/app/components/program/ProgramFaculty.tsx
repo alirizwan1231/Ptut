@@ -20,17 +20,17 @@ export default function ProgramFaculty({ faculty, department }: Props) {
     >
       <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
         <div>
-          <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#C62828] uppercase tracking-widest mb-3">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold text-accent uppercase tracking-widest mb-3">
             <span className="text-[9px]">◆</span>
             Faculty
           </span>
-          <h2 className="text-[clamp(26px,3vw,36px)] font-bold text-[#0D2B5A] tracking-tight">
+          <h2 className="text-[clamp(26px,3vw,36px)] font-bold text-heading tracking-tight">
             Meet the {department} Faculty
           </h2>
         </div>
         <Link
           href="/faculty"
-          className="text-sm font-semibold text-[#C62828] hover:underline underline-offset-4 inline-flex items-center gap-1"
+          className="text-sm font-semibold text-accent hover:underline underline-offset-4 inline-flex items-center gap-1"
         >
           View All Staff <ArrowUpRight size={16} />
         </Link>
@@ -48,9 +48,9 @@ export default function ProgramFaculty({ faculty, department }: Props) {
             >
               <Link
                 href={`/faculty/${member.slug}`}
-                className="group flex items-center gap-4 p-5 bg-white rounded-xl border border-black/5 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all"
+                className="group flex items-center gap-4 p-5 bg-surface rounded-xl border border-border shadow-sm hover:shadow-md hover:-translate-y-1 transition-all"
               >
-                <div className="relative w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-[#F5F7FA]">
+                <div className="relative w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-bg-alt">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -59,12 +59,12 @@ export default function ProgramFaculty({ faculty, department }: Props) {
                   />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="font-bold text-[#0D2B5A] group-hover:text-[#C62828] transition-colors truncate">
+                  <h4 className="font-bold text-heading group-hover:text-accent transition-colors truncate">
                     {member.name}
                   </h4>
-                  <p className="text-xs text-[#64748B] font-medium">{member.designation}</p>
+                  <p className="text-xs text-muted font-medium">{member.designation}</p>
                   {member.email && (
-                    <p className="text-[11px] text-[#C62828] mt-1 truncate">{member.email}</p>
+                    <p className="text-[11px] text-accent mt-1 truncate">{member.email}</p>
                   )}
                 </div>
               </Link>
@@ -72,8 +72,8 @@ export default function ProgramFaculty({ faculty, department }: Props) {
           ))}
         </div>
       ) : (
-        <div className="bg-white rounded-xl border border-black/5 p-8 text-center">
-          <p className="text-[#64748B]">Faculty information will be updated soon.</p>
+        <div className="bg-surface rounded-xl border border-border p-8 text-center">
+          <p className="text-muted">Faculty information will be updated soon.</p>
         </div>
       )}
     </motion.section>
