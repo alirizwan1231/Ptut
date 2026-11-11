@@ -62,25 +62,25 @@ export default function MeritListPage() {
                   <span className="text-[9px]">◆</span> Downloads
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-heading">Provisional Phase I — Second Merit List</h2>
+                <p className="mt-3 text-sm text-muted">PDF files will be available here once published by the admissions office.</p>
               </div>
             </ScrollReveal>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {downloads.map((item, i) => (
                 <ScrollReveal key={i} delay={i * 0.05}>
-                  <a
-                    href="#"
-                    className="group flex items-center gap-4 p-5 bg-bg-alt rounded-xl border border-border hover:border-accent/30 hover:shadow-md transition-all"
+                  <div
+                    className="flex items-center gap-4 p-5 bg-bg-alt rounded-xl border border-border"
                   >
                     <div className="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center shrink-0">
                       {item.type === 'FORM' ? <FileText size={18} /> : item.type === 'CHALLAN' ? <ClipboardList size={18} /> : <ListChecks size={18} />}
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="text-[10px] font-bold text-accent tracking-widest uppercase mb-0.5">{item.type}</div>
-                      <div className="text-sm font-semibold text-heading group-hover:text-accent transition-colors truncate">{item.title}</div>
+                      <div className="text-sm font-semibold text-heading truncate">{item.title}</div>
                     </div>
-                    <Download size={16} className="text-muted group-hover:text-accent transition-colors shrink-0" />
-                  </a>
+                    <Download size={16} className="text-muted/50 shrink-0" />
+                  </div>
                 </ScrollReveal>
               ))}
             </div>

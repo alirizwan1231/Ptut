@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { staffMembers } from 'src/data/faculty';
 import { ArrowLeft, Mail, Award } from 'lucide-react';
+import Header from 'src/app/components/Header';
+import Footer from 'src/app/components/Footer';
 
 interface Props {
   params: { slug: string };
@@ -21,6 +23,8 @@ export default function FacultyDetailPage({ params }: Props) {
     .slice(0, 3);
 
   return (
+    <>
+      <Header />
     <section className="pt-28 pb-24 bg-gradient-to-b from-bg to-bg-alt min-h-screen">
       <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
         <div className="text-xs font-medium text-muted mb-8 flex items-center gap-2">
@@ -97,5 +101,7 @@ export default function FacultyDetailPage({ params }: Props) {
         )}
       </div>
     </section>
+      <Footer />
+    </>
   );
 }

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Header from './components/Header';
 import ThemeProvider from './components/ThemeProvider';
 
 const inter = Inter({
@@ -20,7 +19,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} scroll-smooth`} suppressHydrationWarning>
       <body className="font-sans antialiased bg-bg text-body">
         <ThemeProvider>
-          <Header />
           <main className="">{children}</main>
         </ThemeProvider>
       </body>

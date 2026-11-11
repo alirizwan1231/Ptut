@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { staffMembers, departments } from 'src/data/faculty';
 import FacultyCard from 'src/app/components/FacultyCard';
 import { Users, Search, LayoutGrid, ListFilter } from 'lucide-react';
+import Header from 'src/app/components/Header';
+import Footer from 'src/app/components/Footer';
 
 export default function FacultyPage() {
   const [activeDept, setActiveDept] = useState('All');
@@ -24,11 +26,13 @@ export default function FacultyPage() {
   const totalCount = staffMembers.length;
 
   return (
+    <>
+      <Header />
     <section className="pt-28 pb-24 bg-bg-alt min-h-screen">
       <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
         {/* Breadcrumb */}
         <div className="text-xs font-medium text-muted mb-6 flex items-center gap-2">
-          <span>Home</span>
+          <a href="/" className="hover:text-accent">Home</a>
           <span className="text-muted/50">/</span>
           <span className="text-heading font-semibold">Staff Profile</span>
         </div>
@@ -196,5 +200,7 @@ export default function FacultyPage() {
         </div>
       </div>
     </section>
+      <Footer />
+    </>
   );
 }

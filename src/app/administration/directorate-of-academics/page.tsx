@@ -109,19 +109,18 @@ export default function DirectoratePage() {
         <h3 className="text-xl font-bold text-heading mb-6">Downloads</h3>
         <div className="grid md:grid-cols-2 gap-4">
           {downloads.map((item, i) => (
-            <a
+            <div
               key={i}
-              href="#"
-              className="flex items-center gap-4 p-5 bg-surface border border-border rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group"
+              className="flex items-center gap-4 p-5 bg-surface border border-border rounded-xl shadow-sm"
             >
-              <div className="w-10 h-10 rounded-lg bg-navy/5 text-heading flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-navy/5 text-heading flex items-center justify-center">
                 <item.icon size={18} />
               </div>
-              <span className="text-sm font-semibold text-heading group-hover:text-accent transition-colors">
+              <span className="text-sm font-semibold text-heading">
                 {item.label}
               </span>
-              <Download size={16} className="ml-auto text-muted group-hover:text-accent transition-colors" />
-            </a>
+              <Download size={16} className="ml-auto text-muted/60" />
+            </div>
           ))}
         </div>
       </section>

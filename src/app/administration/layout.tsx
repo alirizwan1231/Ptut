@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ChevronRight } from 'lucide-react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const adminLinks = [
   { href: '/administration', label: 'Overview' },
@@ -16,6 +18,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const pathname = usePathname();
 
   return (
+    <>
+      <Header />
     <div className="min-h-screen bg-bg pt-[72px]">
       <div className="bg-navy text-white py-16 border-b-4 border-accent">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
@@ -64,5 +68,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </div>
       </div>
     </div>
+      <Footer />
+    </>
   );
 }

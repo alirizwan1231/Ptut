@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp, BookOpen, Calendar, Scale, Menu, X, FileText } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const chapters = [
   { id: 'I', title: 'Preliminary' },
@@ -113,6 +115,8 @@ export default function Act2018Page() {
   }, []);
 
   return (
+    <>
+      <Header />
     <main className="bg-bg min-h-screen">
       {/* Hero Header */}
       <section className="relative bg-navy text-white border-b-4 border-accent pt-28 pb-14 lg:pt-32 lg:pb-16 overflow-hidden">
@@ -914,5 +918,7 @@ export default function Act2018Page() {
         )}
       </AnimatePresence>
     </main>
+      <Footer />
+    </>
   );
 }

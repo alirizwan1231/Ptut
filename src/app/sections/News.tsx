@@ -25,9 +25,6 @@ export default function News() {
                 News & Announcements
               </h2>
             </div>
-            <a href="#" className="text-accent font-semibold text-[15px] hover:underline underline-offset-4">
-              View all news →
-            </a>
           </div>
         </ScrollReveal>
 
@@ -54,9 +51,6 @@ export default function News() {
                   <h3 className="text-lg font-bold text-heading leading-snug mb-3 flex-1">
                     {article.title}
                   </h3>
-                  <a href="#" className="text-[13px] font-semibold text-accent inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all mt-auto">
-                    Read Article →
-                  </a>
                 </div>
               </article>
             </ScrollReveal>

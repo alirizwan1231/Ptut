@@ -9,6 +9,7 @@ export const navLinks: NavItem[] = [
   {
     label: 'About Us',
     children: [
+      { href: '/about', label: 'About PTUT' },
       { href: '/academic-regulations', label: 'Academic Regulations' },
       { href: '/act-2018', label: 'ACT 2018' },
     ],
@@ -16,6 +17,7 @@ export const navLinks: NavItem[] = [
   {
     label: 'Academics',
     children: [
+      { href: '/programs', label: 'All Programs' },
       {
         label: 'Faculty of Electric, Auto & Mechanical',
         children: [

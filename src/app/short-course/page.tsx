@@ -91,14 +91,13 @@ export default function ShortCoursePage() {
                         { label: 'Application Form' },
                         { label: 'Course Fee Challan' },
                       ].map((doc, i) => (
-                        <a
+                        <div
                           key={i}
-                          href="#"
-                          className="flex items-center justify-between p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
+                          className="flex items-center justify-between p-3 bg-white/5 rounded-lg"
                         >
                           <span className="text-sm font-medium">{doc.label}</span>
-                          <Download size={16} className="text-accent group-hover:translate-y-0.5 transition-transform" />
-                        </a>
+                          <Download size={16} className="text-accent/60" />
+                        </div>
                       ))}
                     </div>
                   </div>

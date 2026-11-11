@@ -57,6 +57,9 @@ export default function VCMessage() {
               <div className="mt-9 pt-7 border-t border-border font-bold text-[22px] text-accent tracking-tight leading-tight">
                 &ldquo;Innovation with Purpose, Excellence with Vision.&rdquo;
               </div>
+              <a href="/leadership" className="inline-flex items-center gap-1.5 mt-6 text-sm font-semibold text-accent hover:underline underline-offset-4">
+                Meet PTUT leadership →
+              </a>
             </div>
           </ScrollReveal>
         </div>

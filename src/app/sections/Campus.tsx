@@ -39,7 +39,7 @@ export default function Campus() {
           <ScrollReveal
             key={i}
             delay={item.large ? 0 : 0.1 * (i % 3)}
-            className={`relative overflow-hidden cursor-pointer group ${
+            className={`relative overflow-hidden group ${
               item.large
                 ? 'md:col-span-2 lg:col-span-1 lg:row-span-2 h-[340px] md:h-[400px] lg:h-[682px]'
                 : 'h-[280px] md:h-[340px] lg:h-[340px]'

@@ -9,6 +9,8 @@ import ProgramLabs from 'src/app/components/program/ProgramLabs';
 import ProgramEligibility from 'src/app/components/program/ProgramEligibility';
 import ProgramFaculty from 'src/app/components/program/ProgramFaculty';
 import ProgramDownloads from 'src/app/components/program/ProgramDownloads';
+import Header from 'src/app/components/Header';
+import Footer from 'src/app/components/Footer';
 
 interface Props {
   params: { slug: string };
@@ -34,6 +36,8 @@ export default function ProgramPage({ params }: Props) {
   const faculty = staffMembers.filter((s) => program.facultySlugs.includes(s.slug));
 
   return (
+    <>
+      <Header />
     <main className="pt-28 pb-24 bg-gradient-to-b from-bg to-bg-alt min-h-screen">
       <div className="max-w-[1240px] mx-auto px-6 lg:px-8 space-y-24">
         <ProgramHero program={program} />
@@ -46,5 +50,7 @@ export default function ProgramPage({ params }: Props) {
         <ProgramDownloads downloads={program.downloads} />
       </div>
     </main>
+      <Footer />
+    </>
   );
 }

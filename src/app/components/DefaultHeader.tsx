@@ -31,7 +31,7 @@ export default function DefaultHeader() {
         <Link href="/" className="flex items-center gap-3 shrink-0">
           <div className="h-10 lg:h-12 flex items-center">
             <Image
-              src="/images/ptut-logo.png"
+              src="/images/PTUT-Logo.png"
               alt="PTUT Logo"
               width={48}
               height={48}
@@ -48,7 +48,7 @@ export default function DefaultHeader() {
               return (
                 <Link
                   key={item.label}
-                  href={item.href || '#'}
+                  href={item.href!}
                   className="relative px-4 py-2 text-[14px] font-medium transition-all duration-300 hover:text-accent group text-heading"
                 >
                   <span className="relative z-10">{item.label}</span>
@@ -107,7 +107,7 @@ export default function DefaultHeader() {
                                         {child.children!.map((sub) => (
                                           <Link
                                             key={sub.label}
-                                            href={sub.href || '#'}
+                                            href={sub.href!}
                                             onClick={() => setActiveDropdown(null)}
                                             className="group/sub flex items-center gap-2 px-3 py-1.5 rounded-lg text-[13px] text-body hover:text-accent hover:bg-bg-alt transition-all duration-200"
                                           >
@@ -122,7 +122,7 @@ export default function DefaultHeader() {
                                     </>
                                   ) : (
                                     <Link
-                                      href={child.href || '#'}
+                                      href={child.href!}
                                       onClick={() => setActiveDropdown(null)}
                                       className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-[13px] text-body hover:text-accent hover:bg-bg-alt transition-all duration-200"
                                     >
@@ -138,7 +138,7 @@ export default function DefaultHeader() {
                             })}
                           </div>
                           <div className="mt-4 pt-3 border-t border-border">
-                            <Link href="#" className="inline-flex items-center gap-2 text-[12px] font-medium text-accent hover:underline">
+                            <Link href="/programs" className="inline-flex items-center gap-2 text-[12px] font-medium text-accent hover:underline">
                               View all programs
                               <ArrowRight size={14} />
                             </Link>
@@ -149,7 +149,7 @@ export default function DefaultHeader() {
                           {item.children!.map((child) => (
                             <Link
                               key={child.label}
-                              href={child.href || '#'}
+                              href={child.href!}
                               onClick={() => setActiveDropdown(null)}
                               className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-[14px] text-body hover:text-accent hover:bg-bg-alt transition-all duration-200 group/item"
                             >
@@ -173,7 +173,7 @@ export default function DefaultHeader() {
         <div className="hidden lg:flex items-center gap-3 shrink-0">
           <ThemeToggle />
           <a
-            href="#admissions"
+            href="/admissions"
             className="inline-flex items-center gap-2 text-[13px] font-semibold px-6 py-2.5 bg-accent text-white rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/30 active:scale-95 group"
           >
             Apply Now
@@ -217,7 +217,7 @@ export default function DefaultHeader() {
                 <MobileNavItem key={item.label} item={item} onNavigate={() => setMobileOpen(false)} />
               ))}
               <a
-                href="#admissions"
+                href="/admissions"
                 className="flex items-center justify-center gap-2 text-sm font-semibold px-6 py-3.5 bg-accent text-white rounded-xl mt-4 transition-all hover:shadow-lg hover:shadow-accent/25 active:scale-95"
                 onClick={() => setMobileOpen(false)}
               >
@@ -280,7 +280,7 @@ function MobileNavItem({ item, onNavigate, depth = 0 }: { item: NavItem; onNavig
                           {child.children!.map((sub) => (
                             <Link
                               key={sub.label}
-                              href={sub.href || '#'}
+                              href={sub.href!}
                               onClick={onNavigate}
                               className="flex items-center gap-2 px-3 py-2 rounded-lg text-[14px] text-body hover:text-accent hover:bg-bg-alt transition-all duration-200"
                             >
@@ -301,19 +301,26 @@ function MobileNavItem({ item, onNavigate, depth = 0 }: { item: NavItem; onNavig
     );
   }
 
+  if (!item.href) {
+    return (
+      <span
+        className="flex items-center gap-2.5 py-3.5 text-[15px] font-medium border-b border-border last:border-0 text-heading"
+        style={{ paddingLeft: depth * 16 + 8 }}
+      >
+        {item.label}
+      </span>
+    );
+  }
+
   return (
     <Link
-      href={item.href || '#'}
+      href={item.href}
       onClick={onNavigate}
-      className={`flex items-center gap-2.5 py-3.5 text-[15px] font-medium border-b border-border last:border-0 transition-all duration-200 ${
-        item.href && item.href !== '#'
-          ? 'text-heading hover:text-accent hover:pl-1'
-          : 'text-muted/40 cursor-not-allowed'
-      }`}
+      className="flex items-center gap-2.5 py-3.5 text-[15px] font-medium border-b border-border last:border-0 transition-all duration-200 text-heading hover:text-accent hover:pl-1"
       style={{ paddingLeft: depth * 16 + 8 }}
     >
       {item.label}
-      {item.href && item.href !== '#' && <ArrowRight size={14} className="ml-auto text-accent/40" />}
+      <ArrowRight size={14} className="ml-auto text-accent/40" />
     </Link>
   );
 }

@@ -6,27 +6,22 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { label: 'Notice Board', href: '#' },
-    { label: 'Alumni Network', href: '#' },
-    { label: 'Quality Enhancement Cell', href: '#' },
-    { label: 'News & Events', href: '#' },
-    { label: 'Career Opportunities', href: '#' },
+    { label: 'Notice Board', href: '/#news' },
+    { label: 'Alumni Network', href: '/about' },
+    { label: 'Quality Enhancement Cell', href: '/administration/qec' },
+    { label: 'News & Events', href: '/#news' },
+    { label: 'Career Opportunities', href: '/#news' },
   ];
 
   const studentLinks = [
-    { label: 'Academic Calendar', href: '#' },
-    { label: 'Class Time Table', href: '#' },
-    { label: 'Exam Date Sheet', href: '#' },
-    { label: 'Semester Results', href: '#' },
-    { label: 'Student Portal', href: '#' },
+    { label: 'Academic Calendar', href: '/academic-regulations' },
+    { label: 'Exam Date Sheet', href: '/administration/examinations' },
+    { label: 'Semester Results', href: '/administration/examinations' },
   ];
 
   const facultyLinks = [
-    { label: 'PTUT Webmail', href: '#' },
-    { label: 'Update Profile', href: '#' },
-    { label: 'Faculty Handbook', href: '#' },
-    { label: 'Faculty Publications', href: '#' },
-    { label: 'Research Portal', href: '#' },
+    { label: 'Update Profile', href: '/faculty' },
+    { label: 'Faculty Publications', href: '/faculty' },
   ];
 
   return (
@@ -37,10 +32,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
 
           <div className="lg:col-span-5 space-y-6">
-            <div className="flex items-center gap-4">
+            <a href="/" className="flex items-center gap-4">
               <div className="relative h-14 w-14 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center p-2">
                 <Image
-                  src="/images/ptut-logo.png"
+                  src="/images/PTUT-Logo.png"
                   alt="PTUT Logo"
                   width={48}
                   height={48}
@@ -55,7 +50,7 @@ export default function Footer() {
                   Punjab Tianjin University of Technology
                 </span>
               </div>
-            </div>
+            </a>
 
             <p className="text-sm text-white/60 leading-relaxed max-w-[34ch]">
               Pakistan&apos;s First Technology University — pioneering applied education, industry-linked curriculum, and innovation with purpose.
@@ -64,15 +59,15 @@ export default function Footer() {
             <div className="space-y-3 pt-2">
               <div className="flex items-start gap-3 text-sm text-white/70">
                 <MapPin size={16} className="text-accent mt-0.5 shrink-0" />
-                <span>Near Green Town, Lahore — Punjab, Pakistan</span>
+<a href="https://www.google.com/maps/search/?api=1&query=Punjab+Tianjin+University+of+Technology+Lahore" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Near Green Town, Lahore — Punjab, Pakistan</a>
               </div>
               <div className="flex items-center gap-3 text-sm text-white/70">
                 <Phone size={16} className="text-accent shrink-0" />
-                <span>+92 42 9933 2438-39</span>
+<a href="tel:+924299332438" className="hover:text-white transition-colors">+92 42 9933 2438-39</a>
               </div>
               <div className="flex items-center gap-3 text-sm text-white/70">
                 <Mail size={16} className="text-accent shrink-0" />
-                <span>info@ptut.edu.pk</span>
+<a href="mailto:info@ptut.edu.pk" className="hover:text-white transition-colors">info@ptut.edu.pk</a>
               </div>
               <div className="flex items-center gap-3 text-sm text-white/70">
                 <Clock size={16} className="text-accent shrink-0" />
@@ -80,37 +75,6 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-accent hover:border-accent hover:text-white hover:-translate-y-1 transition-all duration-300"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
-              </a>
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-accent hover:border-accent hover:text-white hover:-translate-y-1 transition-all duration-300"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-                </svg>
-              </a>
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-accent hover:border-accent hover:text-white hover:-translate-y-1 transition-all duration-300"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect x="2" y="9" width="4" height="12" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
-              </a>
-            </div>
           </div>
 
           <div className="lg:col-span-2 lg:col-start-7">
@@ -186,17 +150,6 @@ export default function Footer() {
           <p className="text-[11px] text-white/40 tracking-wide">
             © {currentYear} PTUT — WEBSITE DEVELOPED BY IT DEPARTMENT, PTUT
           </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-[11px] text-white/40 hover:text-accent transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-[11px] text-white/40 hover:text-accent transition-colors">
-              Terms of Use
-            </a>
-            <a href="#" className="text-[11px] text-white/40 hover:text-accent transition-colors">
-              Sitemap
-            </a>
-          </div>
           <p className="text-[11px] text-white/40 tracking-wide uppercase">
             Punjab Tianjin University of Technology, Lahore
           </p>

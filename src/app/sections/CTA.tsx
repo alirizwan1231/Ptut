@@ -15,7 +15,7 @@ export default function CTA() {
               </p>
             </div>
             <a
-              href="#"
+              href="/admissions"
               className="shrink-0 bg-surface text-accent px-8 py-4 text-sm font-semibold rounded-md transition-all hover:-translate-y-0.5 hover:bg-bg-alt shadow-lg"
             >
               APPLY ONLINE NOW →

@@ -330,21 +330,20 @@ export default function AdmissionsPage() {
                                 { label: 'Undergraduate Program Fee', file: 'ug-fee.pdf', icon: GraduationCap },
                                 { label: 'Master Program Fee', file: 'masters-fee.pdf', icon: Award },
                             ].map((fee) => (
-                                <a
+                                <div
                                     key={fee.label}
-                                    href={`/downloads/${fee.file}`}
-                                    className="group flex flex-col items-center gap-4 p-8 bg-bg-alt rounded-2xl border-2 border-dashed border-navy/10 hover:border-accent hover:bg-accent/5 transition-all duration-300"
+                                    className="flex flex-col items-center gap-4 p-8 bg-bg-alt rounded-2xl border-2 border-dashed border-navy/10"
                                 >
-                                    <div className="p-3 rounded-full bg-navy/5 group-hover:bg-accent/10 transition-colors">
-                                        <Download size={28} className="text-heading group-hover:text-accent transition-colors" />
+                                    <div className="p-3 rounded-full bg-navy/5">
+                                        <Download size={28} className="text-heading" />
                                     </div>
-                                    <span className="text-sm font-semibold text-heading text-center group-hover:text-accent transition-colors">
+                                    <span className="text-sm font-semibold text-heading text-center">
                                         {fee.label}
                                     </span>
-                                    <span className="text-xs text-body group-hover:text-accent/70 transition-colors flex items-center gap-1">
-                                        Download PDF <ArrowRight size={12} />
+                                    <span className="text-xs text-muted flex items-center gap-1">
+                                        PDF
                                     </span>
-                                </a>
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -471,12 +470,11 @@ export default function AdmissionsPage() {
                                     <h4 className="font-bold text-lg mb-1">Admission Criterion</h4>
                                     <p className="text-sm text-white/70">Go to the online application portal of PTUT</p>
                                 </div>
-                                <a
-                                    href="#"
-                                    className="shrink-0 inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-accent-hover transition-colors shadow-lg shadow-accent/20"
+                                <span
+                                    className="shrink-0 inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-xl text-sm font-semibold shadow-lg shadow-accent/20"
                                 >
                                     Download Criterion <Download size={16} />
-                                </a>
+                                </span>
                             </div>
                         </div>
                     </div>

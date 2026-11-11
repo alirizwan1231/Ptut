@@ -258,7 +258,7 @@ export const staffMembers: StaffMember[] = [
     slug: 'syed-waqas-sabir',
     name: 'Syed Waqas Sabir',
     designation: 'Lecturer',
-    image: img('Syed Waqas Sabir'),
+    image: "/images/teachers/SYED WAQAS SABIR.jpg",
     email: 'waqas.sabir@ptut.edu.pk',
     department: 'Automotive Department',
   },

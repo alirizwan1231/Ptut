@@ -25,15 +25,20 @@ export default function ProgramDownloads({ downloads }: Props) {
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {downloads.map((item, i) => (
-          <motion.a
+        {downloads.map((item, i) => {
+          const isDownloadable = Boolean(item.url) && item.url !== '#';
+          const Card = isDownloadable ? motion.a : motion.div;
+          return (
+          <Card
             key={item.label}
-            href={item.url}
+            {...(isDownloadable ? { href: item.url } : {})}
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className="group flex flex-col items-center text-center p-6 bg-surface rounded-xl border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-accent/20 transition-all"
+            className={isDownloadable
+              ? "group flex flex-col items-center text-center p-6 bg-surface rounded-xl border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-accent/20 transition-all"
+              : "flex flex-col items-center text-center p-6 bg-surface rounded-xl border border-border shadow-sm"}
           >
             <div className="w-12 h-12 rounded-full bg-navy/5 flex items-center justify-center text-heading group-hover:bg-accent group-hover:text-white transition-all mb-4">
               <FileText size={22} />
@@ -45,8 +50,9 @@ export default function ProgramDownloads({ downloads }: Props) {
               <Download size={14} />
               PDF
             </span>
-          </motion.a>
-        ))}
+          </Card>
+          );
+        })}
       </div>
     </motion.section>
   );
